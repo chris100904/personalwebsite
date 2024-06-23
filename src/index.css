@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inika:wght@400&display=swap");
+
 html {
   scroll-behavior: smooth;
+}
+
+.nav-link {
+  font-family: "Inika", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%; /* 1.25 */
+  display: flex;
+  align-items: center;
+  /* color: rgba(255, 255, 255, 0.741); */
+}
+
+.bg-overlay {
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.h1-christopher-chen {
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 84px;
+  line-height: 110%;
+  /* color: rgba(255, 255, 255, 0.741); */
+}
+
+.p-bio {
+  font-family: "Inika", seriff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  display: flex;
+  align-items: center;
+
+  /* color: rgba(255, 255, 255, 0.741); */
+}
+
+.hover-effect {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1);
+  filter: invert(1);
 }
