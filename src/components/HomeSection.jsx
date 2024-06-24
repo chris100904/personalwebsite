@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { animateScroll as scroll } from "react-scroll"; // Import animateScroll
 import homeBackground from "../assets/homebackground.jpg";
 import headshot from "../assets/headshot.jpeg";
 import github from "../assets/github.png";
 import email from "../assets/email.png";
 import linkedin from "../assets/linkedin.png";
-import { slideAnimation } from "../motion";
 import downbutton from "../assets/downbutton.png";
+import SkillsSection from "./SkillsSection";
+import { slideAnimation } from "../motion";
 import "../index.css";
 
 const HomeSection = () => {
@@ -27,13 +27,6 @@ const HomeSection = () => {
 
   const blurAmount = Math.min(scrollY / 100, 5);
 
-  const scrollToResume = () => {
-    scroll.scrollTo("#resume", {
-      smooth: true,
-      duration: 500,
-    });
-  };
-
   return (
     <section
       id="home"
@@ -44,17 +37,24 @@ const HomeSection = () => {
     >
       <div
         className="absolute inset-0 opacity-50"
-        style={{ mixBlendMode: "lighten", background: "#E6E2E2" }}
+        style={{
+          mixBlendMode: "lighten",
+          background: "#E6E2E2",
+          zIndex: 1, // Lower z-index for the overlay
+        }}
       ></div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col relative z-10">
+        {" "}
+        {/* Higher z-index for the main content */}
         <div
-          className="relative z pt-20 flex flex-row px-10"
+          className="relative z-10 pt-20 flex flex-row px-10"
           style={{
             filter: `blur(${blurAmount}px)`,
             transition: "filter 0.1s ease-out",
           }}
         >
+          {/* Left Section */}
           <motion.div
             className="flex flex-col w-1/2 gap-12 border-r border-black px-10"
             {...slideAnimation("left")}
@@ -72,8 +72,13 @@ const HomeSection = () => {
                   filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
                 }}
               />
-              <p className="flex p-bio items-center w-full">
-                Hi, welcome to my personal website! I’m a current junior at
+              <p
+                className="flex text-xl p-bio items-center w-full"
+                style={{
+                  color: "rgba(0, 0, 0, 0.52)",
+                }}
+              >
+                Hi, welcome to my personal website! I'm a current junior at
                 Brown University studying Computer Science and Applied
                 Mathematics. My primary interests are in software engineering,
                 artificial intelligence, and data science, but I am open to
@@ -116,11 +121,24 @@ const HomeSection = () => {
               </a>
             </div>
           </motion.div>
-          <div className="flex-1">Right Content</div>
+          {/* Right Section */}
+          <div className="flex-1">
+            <SkillsSection />
+          </div>
         </div>
-        {/* <a href="#resume" onClick={scrollToResume}>
-          <img src={downbutton} alt="down button" />
-        </a> */}
+        <motion.div
+          className="flex justify-center mt-40"
+          {...slideAnimation("up")}
+        >
+          <a href="#resume">
+            <img
+              src={downbutton}
+              alt="down button"
+              style={{ width: "50px", height: "50px" }}
+              className="z-20" // Ensure the down button is on top
+            />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
