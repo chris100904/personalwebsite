@@ -44,16 +44,15 @@ const HomeSection = () => {
         }}
       ></div>
 
-      <div className="flex flex-col relative z-10">
-        {" "}
+      <div
+        className="flex flex-col relative z-10"
+        style={{
+          filter: `blur(${blurAmount}px)`,
+          transition: "filter 0.1s ease-out",
+        }}
+      >
         {/* Higher z-index for the main content */}
-        <div
-          className="relative z-10 pt-20 flex flex-row px-10"
-          style={{
-            filter: `blur(${blurAmount}px)`,
-            transition: "filter 0.1s ease-out",
-          }}
-        >
+        <div className="relative z-10 pt-20 flex flex-row px-10">
           {/* Left Section */}
           <motion.div
             className="flex flex-col w-1/2 gap-12 border-r border-black px-10"
@@ -130,12 +129,12 @@ const HomeSection = () => {
           className="flex justify-center mt-40"
           {...slideAnimation("up")}
         >
-          <a href="#resume">
+          <a href="#resume" className="hover-effect">
             <img
               src={downbutton}
               alt="down button"
               style={{ width: "50px", height: "50px" }}
-              className="z-20" // Ensure the down button is on top
+              className="z-20"
             />
           </a>
         </motion.div>
