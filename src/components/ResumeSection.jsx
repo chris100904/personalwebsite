@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Modal from "react-modal";
 import workIcon from "../assets/work.png";
 import educationIcon from "../assets/education.png";
-import NextPage from "./NextPage";
+import resumePDF from "../assets/resume.pdf";
+import preview from "../assets/preview.png";
 
 const experiences = [
   {
@@ -44,7 +46,36 @@ const education = [
   },
 ];
 
-const ResumeSection = () => {
+Modal.setAppElement("#root"); // For accessibility
+
+const ResumeSection = ({ toggleModal }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (modalIsOpen) {
+      // Disable scrolling on the webpage when modal is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling when modal is closed
+      document.body.style.overflow = "auto";
+    }
+
+    // Clean up
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [modalIsOpen]);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+    toggleModal();
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    toggleModal();
+  };
+
   return (
     <section
       id="resume"
@@ -96,6 +127,78 @@ const ResumeSection = () => {
           Here are my work experiences and education.
         </p>
 
+        {/* <button
+          onClick={openModal}
+          className="self-center mb-10 px-6 py-3 text-white font-semibold rounded hover-effect"
+          style={{
+            backgroundColor: "#405bba",
+          }}
+        >
+          View Full Resume
+        </button>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Resume Modal"
+          className="fixed inset-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-lg max-w-3xl mx-auto h-3/4 translate-y-1/4"
+          overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        >
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 bg-gray-200 px-3 py-1 rounded hover-effect"
+          >
+            Close
+          </button>
+          <iframe
+            src={resumePDF}
+            title="Resume"
+            width="100%"
+            height="600px"
+            className="border-0"
+          />
+        </Modal> */}
+
+        <div
+          onClick={openModal}
+          className="self-center cursor-pointer mb-10 hover-preview relative"
+          style={{
+            width: "200px",
+            height: "200px",
+            background: `url(${preview})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "8px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <span className="font-semibold text-lg">See Full Resume</span>
+          </div>
+        </div>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Resume Modal"
+          className="fixed inset-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-lg max-w-3xl mx-auto h-3/4 translate-y-1/4"
+          overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        >
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 bg-gray-200 px-3 py-1 rounded hover-effect"
+          >
+            Close
+          </button>
+          <iframe
+            src={resumePDF}
+            title="Resume"
+            width="100%"
+            height="600px"
+            className="border-0"
+          />
+        </Modal>
+
         <div className="flex flex-col gap-8">
           <div>
             <h3 className="flex justify-center text-2xl font-bold p-heebo tracking-widest mb-6 blue">
@@ -131,7 +234,6 @@ const ResumeSection = () => {
                         }}
                       ></div>
                     </div>
-                    {/* <img src={workIcon} alt="work icon" /> */}
                     <div className="flex flex-col w-2/3  pr-80">
                       <h5
                         className="text-xl font-bold p-heebo tracking-wide"
@@ -181,7 +283,7 @@ const ResumeSection = () => {
                     <div className="relative w-20 h-full">
                       <img
                         src={educationIcon}
-                        alt="work icon"
+                        alt="education icon"
                         className="absolute left-1/2 transform -translate-x-1/2"
                       />
                       <div
@@ -193,7 +295,6 @@ const ResumeSection = () => {
                         }}
                       ></div>
                     </div>
-                    {/* <img src={workIcon} alt="work icon" /> */}
                     <div className="flex flex-col w-2/3  pr-80">
                       <h5
                         className="text-xl font-bold p-heebo tracking-wide"
@@ -220,7 +321,6 @@ const ResumeSection = () => {
             </div>
           </div>
         </div>
-        <NextPage href="#projects" />
       </div>
     </section>
   );

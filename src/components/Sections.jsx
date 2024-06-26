@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeSection from "./HomeSection";
 import ResumeSection from "./ResumeSection";
 import ProjectsSection from "./ProjectsSection";
 import ActivitiesSection from "./ActivitiesSection";
 import ContactSection from "./ContactSection";
 
-const Sections = () => {
+const Sections = ({ toggleModal }) => {
   return (
     <div>
       <HomeSection />
-      <ResumeSection />
+      <ResumeSection toggleModal={toggleModal} />
       <ProjectsSection />
       <ActivitiesSection />
       <ContactSection />

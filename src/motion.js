@@ -25,15 +25,15 @@ export const slideAnimation = (direction) => {
 export const fadeAnimation = {
   initial: {
     opacity: 0,
-    transition: { ...transition, delay: 0.5 },
+    transition: { type: "tween", duration: 0.3 }, // Initial fade-in animation
   },
   animate: {
     opacity: 1,
-    transition: { ...transition, delay: 0 },
+    transition: { type: "tween", duration: 0.3 }, // Fade-in animation
   },
   exit: {
     opacity: 0,
-    transition: { ...transition, delay: 0 },
+    transition: { type: "tween", duration: 0.3 }, // Fade-out animation
   },
 };
 

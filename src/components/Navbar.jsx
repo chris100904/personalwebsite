@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ isNavbarVisible }) => {
   const [bgColor, setBgColor] = useState("bg-gray-100");
 
   const handleScroll = () => {
@@ -28,6 +28,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full top-0 z-20 p-4 border-b border-black transition-colors duration-300 ${bgColor}`}
+      style={{ display: isNavbarVisible ? "block" : "none" }}
     >
       <div className="container mx-auto flex justify-center gap-12">
         <a href="#home" className="text-black nav-link hover-effect">
