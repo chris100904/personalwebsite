@@ -38,6 +38,16 @@ html {
   filter: invert(1);
 }
 
+.hover-close {
+  transition: transform 0.3s, filter 0.3s ease;
+}
+
+.hover-close:hover {
+  transform: scale(1.2);
+  filter: invert(44%) sepia(29%) saturate(504%) hue-rotate(166deg)
+    brightness(95%) contrast(92%);
+}
+
 .p-inika {
   @apply font-inika;
 }
@@ -96,7 +106,12 @@ html {
 
 .hover-preview:hover span {
   color: white;
-  background-color: rgba(107, 104, 104, 0.6); /* Semi-transparent black background */
+  background-color: rgba(
+    107,
+    104,
+    104,
+    0.6
+  ); /* Semi-transparent black background */
   padding: 4px 8px; /* Adjust padding for better spacing */
   border-radius: 4px; /* Rounded corners for the background */
 }

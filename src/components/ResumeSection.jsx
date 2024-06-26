@@ -5,6 +5,7 @@ import educationIcon from "../assets/education.png";
 import resumePDF from "../assets/resume.pdf";
 import preview from "../assets/preview.png";
 import NextPage from "./NextPage";
+import x from "../assets/x.png";
 
 const experiences = [
   {
@@ -54,14 +55,11 @@ const ResumeSection = ({ toggleModal }) => {
 
   useEffect(() => {
     if (modalIsOpen) {
-      // Disable scrolling on the webpage when modal is open
       document.body.style.overflow = "hidden";
     } else {
-      // Enable scrolling when modal is closed
       document.body.style.overflow = "auto";
     }
 
-    // Clean up
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -154,9 +152,9 @@ const ResumeSection = ({ toggleModal }) => {
         >
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 bg-gray-200 px-3 py-1 rounded hover-effect"
+            className="absolute top-5 right-4 hover-close"
           >
-            Close
+            <img src={x} alt="close" className="w-10" />
           </button>
           <iframe
             src={resumePDF}
