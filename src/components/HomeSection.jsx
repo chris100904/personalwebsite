@@ -9,6 +9,7 @@ import downbutton from "../assets/downbutton.png";
 import SkillsSection from "./SkillsSection";
 import { slideAnimation } from "../motion";
 import "../index.css";
+import NextPage from "./NextPage";
 
 const HomeSection = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -125,19 +126,7 @@ const HomeSection = () => {
             <SkillsSection />
           </div>
         </div>
-        <motion.div
-          className="flex justify-center mt-40"
-          {...slideAnimation("up")}
-        >
-          <a href="#resume" className="hover-effect">
-            <img
-              src={downbutton}
-              alt="down button"
-              style={{ width: "50px", height: "50px" }}
-              className="z-20"
-            />
-          </a>
-        </motion.div>
+        <NextPage href="#resume" />
       </div>
     </section>
   );

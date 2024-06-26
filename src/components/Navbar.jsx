@@ -15,7 +15,7 @@ const Navbar = () => {
     });
 
     if (currentSection) {
-      setBgColor(currentSection.classList[1]);
+      setBgColor(currentSection.dataset.bgcolor);
     }
   };
 

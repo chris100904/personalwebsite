@@ -45,3 +45,7 @@ html {
 .p-heebo {
   @apply font-heebo;
 }
+
+.blue {
+  color: #405bba;
+}

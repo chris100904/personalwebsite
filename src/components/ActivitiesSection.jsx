@@ -4,6 +4,7 @@ const ActivitiesSection = () => {
   return (
     <section
       id="activities"
+      data-bgcolor="bg-gray-400"
       className="min-h-screen bg-gray-400 flex flex-col items-center justify-center"
     >
       <h1 className="text-4xl mb-4">Contact Section</h1>

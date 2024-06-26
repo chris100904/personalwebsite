@@ -1,67 +1,227 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import workIcon from "../assets/work.png";
+import educationIcon from "../assets/education.png";
+import NextPage from "./NextPage";
+
+const experiences = [
+  {
+    title: "Data Analyst and Marketing Intern",
+    company: "TetherView",
+    duration: "January 2022 - June 2022",
+    description:
+      "Developed advanced web scraping tools using Python to collect and analyze vast datasets on web traffic and keyword frequencies, leading to a 20% increase in website traffic. Utilized analyzed data to write effective meta descriptions/ad copies for TetherView's website and subpages. Created, edited, and published advertising podcast videos onto TetherView's YouTube channel.",
+  },
+  {
+    title: "Assistant Piano Teacher",
+    company: "Little Music Academy of Marlboro",
+    duration: "October 2019 - August 2022",
+    description:
+      "Taught supplemental piano and music theory lessons to students who needed additional help in preparing examinations under the Royal Conservatory of Music program. Accompanied student vocalists for local recitals, auditions, and performances in Carnegie Hall and Engelman Recital Hall at Baruch College.",
+  },
+];
+
+const education = [
+  {
+    degree: "Bachelor's of Science Degree",
+    school: "Brown University",
+    duration: "September 2022 - May 2026",
+    description:
+      "Concentrating in Applied Mathematics–Computer Science on the professional track. Focusing on systems engineering, algorithms design, artificial intelligence and deep learning, and software engineering principles.",
+  },
+  {
+    degree: "High School Diploma",
+    school: "High Technology High School",
+    duration: "September 2018 - June 2022",
+    description:
+      "Attended one of the US top ranked public STEM high schools that focused on pre-engineering disciplines. Former president of the Classical Music Club and director of the instrumental ensemble for the performing arts club (Basie Award nominee).",
+  },
+  {
+    degree: "Precollege Diploma",
+    school: "Manhattan School of Music",
+    duration: "September 2020 - May 2022",
+    description:
+      "Participated in the Precollege program for Classical Piano performance studies, which involved attending private lessons, music classes, and having periodic performances every weekend.",
+  },
+];
 
 const ResumeSection = () => {
-  const [isTitleIntersecting, setIsTitleIntersecting] = useState(false);
-  const [isContentIntersecting, setIsContentIntersecting] = useState(false);
-  const titleRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!titleRef.current || !contentRef.current) return;
-
-      const titleRect = titleRef.current.getBoundingClientRect();
-      const contentRect = contentRef.current.getBoundingClientRect();
-      const scrollTop = window.scrollY || window.pageYOffset;
-      const navbarHeight = 64; // Adjust this value according to your navbar height
-
-      // Calculate whether title and content are intersecting with the navbar
-      const titleIntersects =
-        titleRect.top <= navbarHeight && titleRect.bottom >= navbarHeight;
-      const contentIntersects =
-        contentRect.top <= navbarHeight && contentRect.bottom >= navbarHeight;
-
-      setIsTitleIntersecting(titleIntersects);
-      setIsContentIntersecting(contentIntersects);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const titleBlurAmount = isTitleIntersecting ? 2 : 0; // Adjust blur intensity as needed
-  const contentBlurAmount = isContentIntersecting ? 2 : 0; // Adjust blur intensity as needed
-
   return (
     <section
       id="resume"
-      className="min-h-screen bg-gray-200 flex flex-col items-center justify-center relative"
+      data-bgcolor="bg-white"
+      className="relative w-full px-20 py-10"
     >
-      <h1
-        ref={titleRef}
-        className="text-4xl mb-4"
+      {/* Dark Gray Blur */}
+      <div
+        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
         style={{
-          filter: `blur(${titleBlurAmount}px)`,
-          transition: "filter 0.1s ease-out", // Optional: Smooth transition
+          width: "200px",
+          height: "200px",
+          background: "darkgray",
+          top: "-50px",
+          left: "100px",
         }}
-      >
-        About Section
-      </h1>
-      <p
-        ref={contentRef}
-        className="text-lg text-center max-w-lg"
+      ></div>
+      {/* Medium Gray Blur */}
+      <div
+        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
         style={{
-          filter: `blur(${contentBlurAmount}px)`,
-          transition: "filter 0.1s ease-out", // Optional: Smooth transition
+          width: "300px",
+          height: "300px",
+          background: "gray",
+          top: "300px",
+          right: "200px",
         }}
-      >
-        Our app uses advanced algorithms to generate running routes based on
-        your desired distance and starting location. Whether you're training for
-        a marathon or just enjoying a casual run, we've got you covered.
-      </p>
+      ></div>
+      {/* Another Blur Spot */}
+      <div
+        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
+        style={{
+          width: "400px",
+          height: "400px",
+          background: "darkgray",
+          top: "600px",
+          left: "500px",
+        }}
+      ></div>
+
+      <div className="relative flex flex-col mt-10">
+        <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
+          RESUME
+        </h2>
+        <p
+          className="p-heebo flex justify-center text-xl font-medium mb-10"
+          style={{ color: "rgba(0, 0, 0, 0.52)" }}
+        >
+          Here are my work experiences and education.
+        </p>
+
+        <div className="flex flex-col gap-8">
+          <div>
+            <h3 className="flex justify-center text-2xl font-bold p-heebo tracking-widest mb-6 blue">
+              WORK EXPERIENCE
+            </h3>
+            <div className="flex flex-col">
+              {experiences.map((exp, index) => (
+                <div key={index} className="flex">
+                  <div className="flex flex-row w-full pl-32">
+                    <div className="flex flex-col w-1/3 text-right pl-52 pb-32">
+                      <h4 className="text-xl font-bold p-heebo">{exp.title}</h4>
+                      <p
+                        className="text-base p-heebo"
+                        style={{
+                          color: "rgba(0, 0, 0, 0.72)",
+                        }}
+                      >
+                        {exp.duration}
+                      </p>
+                    </div>
+                    <div className="relative w-20 h-full">
+                      <img
+                        src={workIcon}
+                        alt="work icon"
+                        className="absolute left-1/2 transform -translate-x-1/2"
+                      />
+                      <div
+                        className="h-full absolute left-1/2 transform -translate-y-2 -translate-x-1/2"
+                        style={{
+                          width: "2px",
+                          backgroundColor: "#1e1e1e",
+                          opacity: "43%",
+                        }}
+                      ></div>
+                    </div>
+                    {/* <img src={workIcon} alt="work icon" /> */}
+                    <div className="flex flex-col w-2/3  pr-80">
+                      <h5
+                        className="text-xl font-bold p-heebo tracking-wide"
+                        style={{ color: "#405BBA" }}
+                      >
+                        {exp.company}
+                      </h5>
+                      <div
+                        className="mb-6 w-12"
+                        style={{ height: "2px", backgroundColor: "#1E1E1E" }}
+                      ></div>
+                      <p
+                        className="text-base font-extralight p-heebo"
+                        style={{
+                          color: "rgba(0, 0, 0, 0.72)",
+                        }}
+                      >
+                        {exp.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="flex justify-center text-2xl font-bold p-heebo tracking-widest mb-6 blue">
+              BACKGROUND EDUCATION
+            </h3>
+            <div className="flex flex-col">
+              {education.map((edu, index) => (
+                <div key={index} className="flex">
+                  <div className="flex flex-row w-full pl-32">
+                    <div className="flex flex-col w-1/3 text-right pl-52 pb-32">
+                      <h4 className="text-xl font-bold p-heebo">
+                        {edu.degree}
+                      </h4>
+                      <p
+                        className="text-base p-heebo"
+                        style={{
+                          color: "rgba(0, 0, 0, 0.72)",
+                        }}
+                      >
+                        {edu.duration}
+                      </p>
+                    </div>
+                    <div className="relative w-20 h-full">
+                      <img
+                        src={educationIcon}
+                        alt="work icon"
+                        className="absolute left-1/2 transform -translate-x-1/2"
+                      />
+                      <div
+                        className="h-full absolute left-1/2 transform -translate-y-2 -translate-x-1/2"
+                        style={{
+                          width: "2px",
+                          backgroundColor: "#1e1e1e",
+                          opacity: "43%",
+                        }}
+                      ></div>
+                    </div>
+                    {/* <img src={workIcon} alt="work icon" /> */}
+                    <div className="flex flex-col w-2/3  pr-80">
+                      <h5
+                        className="text-xl font-bold p-heebo tracking-wide"
+                        style={{ color: "#405BBA" }}
+                      >
+                        {edu.school}
+                      </h5>
+                      <div
+                        className="mb-6 w-12"
+                        style={{ height: "2px", backgroundColor: "#1E1E1E" }}
+                      ></div>
+                      <p
+                        className="text-base font-extralight p-heebo"
+                        style={{
+                          color: "rgba(0, 0, 0, 0.72)",
+                        }}
+                      >
+                        {edu.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <NextPage href="#projects" />
+      </div>
     </section>
   );
 };
