@@ -126,7 +126,7 @@ const HomeSection = () => {
             <SkillsSection />
           </div>
         </div>
-        <NextPage href="#resume" />
+        <NextPage href="#resume" marginTop="200px" isBrightBackground={false}/>
       </div>
     </section>
   );

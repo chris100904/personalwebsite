@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { slideAnimation, fadeAnimation } from "../motion";
+import { slideAnimation } from "../motion";
 import numbox from "../assets/numbox.png";
-import downarrow from "../assets/downarrow.png";
 
 const skills = [
   { name: "Java", level: 80 },

@@ -4,6 +4,7 @@ import workIcon from "../assets/work.png";
 import educationIcon from "../assets/education.png";
 import resumePDF from "../assets/resume.pdf";
 import preview from "../assets/preview.png";
+import NextPage from "./NextPage";
 
 const experiences = [
   {
@@ -126,39 +127,6 @@ const ResumeSection = ({ toggleModal }) => {
         >
           Here are my work experiences and education.
         </p>
-
-        {/* <button
-          onClick={openModal}
-          className="self-center mb-10 px-6 py-3 text-white font-semibold rounded hover-effect"
-          style={{
-            backgroundColor: "#405bba",
-          }}
-        >
-          View Full Resume
-        </button>
-
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Resume Modal"
-          className="fixed inset-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-lg max-w-3xl mx-auto h-3/4 translate-y-1/4"
-          overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-        >
-          <button
-            onClick={closeModal}
-            className="absolute top-4 right-4 bg-gray-200 px-3 py-1 rounded hover-effect"
-          >
-            Close
-          </button>
-          <iframe
-            src={resumePDF}
-            title="Resume"
-            width="100%"
-            height="600px"
-            className="border-0"
-          />
-        </Modal> */}
-
         <div
           onClick={openModal}
           className="self-center cursor-pointer mb-10 hover-preview relative"
@@ -321,6 +289,7 @@ const ResumeSection = ({ toggleModal }) => {
             </div>
           </div>
         </div>
+        <NextPage href="#projects" marginTop="20px" isBrightBackground={true} />
       </div>
     </section>
   );
