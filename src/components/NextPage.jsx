@@ -1,13 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import downarrow from "../assets/downarrow.png";
 import downbutton from "../assets/downbutton.png";
 import { slideAnimation } from "../motion";
 
 const NextPage = ({ href, marginTop, isBrightBackground }) => {
-  const iconSrc = isBrightBackground ? downarrow : downbutton;
-
   return (
     <motion.div
       className="flex justify-center"
@@ -16,11 +13,12 @@ const NextPage = ({ href, marginTop, isBrightBackground }) => {
     >
       <a href={href} className="hover-effect">
         <img
-          src={iconSrc}
+          src={downbutton}
           alt="down icon"
           style={{
-            width: isBrightBackground ? "35px" : "50px",
-            height: isBrightBackground ? "30px" : "50px",
+            width: "50px",
+            height: "50px",
+            filter: isBrightBackground ? "invert(100%)" : "none",
           }}
           className="z-20"
         />

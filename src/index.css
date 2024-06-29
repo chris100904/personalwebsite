@@ -115,3 +115,98 @@ html {
   padding: 4px 8px; /* Adjust padding for better spacing */
   border-radius: 4px; /* Rounded corners for the background */
 }
+
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items onto multiple lines */
+  gap: 40px; /* Adjust the gap between project cards */
+  justify-content: center; /* Center align items horizontally */
+}
+
+.project-card {
+  position: relative;
+  cursor: pointer;
+  width: 350px; /* Adjust card width */
+  height: 250px; /* Adjust card height */
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Adjust image fitting */
+  transition: filter 0.3s ease; /* Apply hover effect */
+}
+
+.project-overview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: left;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-title {
+  font-weight: bold;
+  font-family: "Heebo", sans-serif; /* Adjust font family */
+}
+
+.project-category {
+  font-weight: normal;
+  font-family: "Heebo", sans-serif; /* Adjust font family */
+}
+
+.project-card:hover .project-overview {
+  opacity: 1;
+}
+
+.project-card:hover .project-image {
+  filter: brightness(40%);
+}
+
+.project-modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.project-modal-image {
+  width: 100%;
+  height: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f00;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.project-modal-hover {
+  transition: color 0.3s;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+.project-modal-hover:hover {
+  color: #405bba;
+}

@@ -5,7 +5,6 @@ import headshot from "../assets/headshot.jpeg";
 import github from "../assets/github.png";
 import email from "../assets/email.png";
 import linkedin from "../assets/linkedin.png";
-import downbutton from "../assets/downbutton.png";
 import SkillsSection from "./SkillsSection";
 import { slideAnimation } from "../motion";
 import "../index.css";

@@ -147,15 +147,19 @@ const ResumeSection = ({ toggleModal }) => {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="Resume Modal"
-          className="fixed inset-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-lg max-w-3xl mx-auto h-3/4 translate-y-1/4"
-          overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          className={`fixed inset-0 flex flex-col p-4 bg-white rounded-lg shadow-lg max-w-3xl mx-auto outline-none h-fit translate-y-1/4 transition-opacity duration-1000${
+            modalIsOpen ? "opacity-100" : "opacity-0"
+          }`}
+          overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300"
         >
-          <button
-            onClick={closeModal}
-            className="absolute top-5 right-4 hover-close"
-          >
-            <img src={x} alt="close" className="w-10" />
-          </button>
+          <div className="h-12">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 hover-close"
+            >
+              <img src={x} alt="close" className="w-10" />
+            </button>
+          </div>
           <iframe
             src={resumePDF}
             title="Resume"
