@@ -20,7 +20,7 @@ const Navbar = ({ isNavbarVisible }) => {
   };
 
   useEffect(() => {
-    handleScroll(); // Run once on mount to set initial color
+    handleScroll(); 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,9 +40,9 @@ const Navbar = ({ isNavbarVisible }) => {
         <a href="#projects" className="text-black nav-link hover-effect">
           PROJECTS
         </a>
-        <a href="#activities" className="text-black nav-link hover-effect">
+        {/* <a href="#activities" className="text-black nav-link hover-effect">
           ACTIVITIES
-        </a>
+        </a> */}
         <a href="#contact" className="text-black nav-link hover-effect">
           CONTACT
         </a>

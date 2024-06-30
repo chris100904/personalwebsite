@@ -206,11 +206,7 @@ const ProjectsSection = ({ toggleModal }) => {
             </div>
           </Modal>
         )}
-        <NextPage
-          href="#activities"
-          marginTop="140px"
-          isBrightBackground={true}
-        />
+        <NextPage href="#contact" marginTop="140px" isBrightBackground={true} />
       </div>
     </section>
   );

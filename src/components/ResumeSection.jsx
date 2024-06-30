@@ -13,7 +13,7 @@ const experiences = [
     company: "TetherView",
     duration: "January 2022 - June 2022",
     description:
-      "Developed advanced web scraping tools using Python to collect and analyze vast datasets on web traffic and keyword frequencies, leading to a 20% increase in website traffic. Utilized analyzed data to write effective meta descriptions/ad copies for TetherView's website and subpages. Created, edited, and published advertising podcast videos onto TetherView's YouTube channel.",
+      "Developed web scraping tools using Python to collect and analyze vast datasets on web traffic and keyword frequencies, leading to a 20% increase in website traffic. Utilized analyzed data to write effective meta descriptions/ad copies for TetherView's website and subpages. Created, edited, and published advertising podcast videos onto TetherView's YouTube channel.",
   },
   {
     title: "Assistant Piano Teacher",
@@ -48,7 +48,7 @@ const education = [
   },
 ];
 
-Modal.setAppElement("#root"); // For accessibility
+Modal.setAppElement("#root"); 
 
 const ResumeSection = ({ toggleModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);

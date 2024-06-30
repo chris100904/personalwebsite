@@ -8,8 +8,8 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      data-bgcolor="contact-color"
-      className="min-h-screen flex flex-col contact-color px-20 py-10"
+      data-bgcolor="bg-white"
+      className="min-h-screen flex flex-col bg-white px-20 py-10"
     >
       <div className="flex flex-col mt-10">
         <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
@@ -62,7 +62,12 @@ const ContactSection = () => {
             </p>
           </div>
         </div>
-        <NextPage href="#home" marginTop={"440px"} isUpsideDown={"True"} />
+        <NextPage
+          href="#home"
+          marginTop={"440px"}
+          isBrightBackground={"True"}
+          isUpsideDown={"True"}
+        />
       </div>
     </section>
   );
