@@ -210,3 +210,27 @@ html {
 .project-modal-hover:hover {
   color: #405bba;
 }
+
+.contact-color {
+  background-color: #e6e2e2;
+}
+
+.contact-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+}
+
+.contact-div {
+  width: 200px;
+}
+
+.hover-contact {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hover-contact:hover {
+  transform: scale(1.1);
+  filter: invert(28%) sepia(100%) saturate(745%) hue-rotate(169deg)
+    brightness(92%) contrast(89%);
+}

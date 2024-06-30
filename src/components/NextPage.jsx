@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import downbutton from "../assets/downbutton.png";
 import { slideAnimation } from "../motion";
 
-const NextPage = ({ href, marginTop, isBrightBackground }) => {
+const NextPage = ({ href, marginTop, isBrightBackground, isUpsideDown }) => {
   return (
     <motion.div
       className="flex justify-center"
@@ -19,6 +19,7 @@ const NextPage = ({ href, marginTop, isBrightBackground }) => {
             width: "50px",
             height: "50px",
             filter: isBrightBackground ? "invert(100%)" : "none",
+            transform: isUpsideDown ? "rotate(180deg)" : "none",
           }}
           className="z-20"
         />
@@ -31,6 +32,7 @@ NextPage.propTypes = {
   href: PropTypes.string.isRequired,
   marginTop: PropTypes.string,
   isBrightBackground: PropTypes.bool.isRequired,
+  isUpsideDown: PropTypes.bool,
 };
 
 export default NextPage;
