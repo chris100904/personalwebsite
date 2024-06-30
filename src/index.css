@@ -14,6 +14,10 @@ html {
   @apply font-inika text-[20px] leading-[125%] flex items-center;
 }
 
+.home-color {
+  background-color: #7f7e7e;
+}
+
 .bg-overlay {
   background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
   position: absolute;

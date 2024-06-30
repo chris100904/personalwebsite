@@ -30,6 +30,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
+      data-bgcolor="home-color"
       className="min-h-screen bg-cover bg-center flex flex-col items-center pt-20 relative z-0"
       style={{
         backgroundImage: `url(${homeBackground})`,
