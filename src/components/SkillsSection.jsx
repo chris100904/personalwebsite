@@ -54,10 +54,10 @@ const SkillsSection = () => {
             className="p-inika text-lg font-medium mb-10"
             style={{ color: "rgba(0, 0, 0, 0.52)" }}
           >
-            I am a strong learner and can adapt quickly to new challenges. I am
-            strong with computer science and the foundations of engineering; I
-            understand what it takes to solve a problem. Below are highlights of
-            my technical skills:
+            I am a quick learner who can adapt rapidly to new challenges. With a
+            solid foundation in computer science and engineering principles, I
+            know what it takes to solve complex problems. Below are highlights
+            of my technical skills:
           </p>
           {skills.map((skill) => (
             <div key={skill.name} className="mb-8 relative">

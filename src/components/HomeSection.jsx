@@ -37,7 +37,7 @@ const HomeSection = () => {
       }}
     >
       <div
-        className="absolute inset-0 opacity-50"
+        className="absolute inset-0 opacity-80" // Increased opacity to lighten the background more
         style={{
           mixBlendMode: "lighten",
           background: "#E6E2E2",
