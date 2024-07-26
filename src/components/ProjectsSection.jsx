@@ -42,16 +42,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "LoopRun (WIP)",
-    image: running,
-    openimage: running,
-    category: "Web Development, Google Maps API + AI Integration",
-    description:
-      "LoopRun is a web app designed to help runners discover loop routes using Google Maps API's location services. It integrates open source AI platforms to assist with autocomplete features to suggest optimal running paths that start and end at the same point, enhancing user experience with intuitive map displays and interactive route planning capabilities. Ideal for fitness enthusiasts, LoopRun simplifies the process of finding efficient and enjoyable running routes tailored to individual preferences and locations.",
-    github: "https://github.com/chris100904/looprun",
-  },
-  {
-    id: 5,
     title: "TuneTailor AI (WIP)",
     image: spotify,
     openimage: spotify,
@@ -61,7 +51,7 @@ const projects = [
     github: "https://github.com/albertddong/TuneTailor",
   },
   {
-    id: 6,
+    id: 5,
     title: "Language Journal AI App (WIP)",
     image: languagejournal,
     openimage: languagejournal,
