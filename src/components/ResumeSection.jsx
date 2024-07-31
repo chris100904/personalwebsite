@@ -9,6 +9,12 @@ import x from "../assets/x.png";
 
 const experiences = [
   {
+    title: "Software Engineer Intern",
+    company: "Vane",
+    duration: "July 2024 - Present",
+    description:  "At a dynamic startup, the responsibilities spanned multiple disciplines in full-stack development. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+  },
+  {
     title: "Data Analyst and Marketing Intern",
     company: "TetherView",
     duration: "January 2022 - June 2022",
@@ -204,7 +210,7 @@ const ResumeSection = ({ toggleModal }) => {
                         }}
                       ></div>
                     </div>
-                    <div className="flex flex-col w-2/3  pr-80">
+                    <div className="flex flex-col w-2/3 pb-10 pr-80">
                       <h5
                         className="text-xl font-bold p-heebo tracking-wide"
                         style={{ color: "#405BBA" }}
