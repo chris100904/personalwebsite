@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100 flex flex-col overflow-screen">
       <Navbar isNavbarVisible={isNavbarVisible} />
       <Sections toggleModal={toggleModal} />
     </div>
