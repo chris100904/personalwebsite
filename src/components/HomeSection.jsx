@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import homeBackground from "../assets/homebackground.jpg";
-import headshot from "../assets/headshot.jpeg";
+import headshot from "../assets/headshot.jpg";
 import github from "../assets/github.png";
 import email from "../assets/email.png";
 import linkedin from "../assets/linkedin.png";
@@ -64,13 +64,7 @@ const HomeSection = () => {
               <img
                 src={headshot}
                 alt="headshot of me"
-                className="flex rounded-full"
-                style={{
-                  width: "220px",
-                  height: "220px",
-                  objectFit: "cover",
-                  filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                }}
+                className="w-60 h-60 rounded-full shadow-gray-500 shadow-lg"
               />
               <p
                 className="flex text-xl p-bio items-center w-full"
