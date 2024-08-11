@@ -4,11 +4,12 @@ import { slideAnimation } from "../motion";
 import numbox from "../assets/numbox.png";
 
 const skills = [
-  { name: "Java", level: 80 },
   { name: "Python", level: 80 },
-  { name: "C/C++", level: 80 },
-  { name: "HTML/CSS", level: 70 },
-  { name: "JS/Typescript/React", level: 60 },
+  { name: "JS/Typescript/React", level: 80 },
+  { name: "HTML/CSS", level: 80 },
+  { name: "Java", level: 70 },
+  { name: "C/C++", level: 60 },
+  { name: "Dart", level: 50 },
 ];
 
 const SkillsSection = () => {
@@ -19,14 +20,9 @@ const SkillsSection = () => {
   };
 
   return (
-    <motion.div
-      className="flex flex-col w-full px-20"
-      {...slideAnimation("right")}
-    >
+    <motion.div className="flex flex-col w-full px-20" {...slideAnimation("right")}>
       <div className="flex items-center mb-6">
-        <h2 className="text-3xl font-bold p-heebo tracking-widest flex">
-          SKILLS
-        </h2>
+        <h2 className="text-3xl font-bold p-heebo tracking-widest flex">SKILLS</h2>
         {/* <button onClick={toggleSkills} className="px-4 flex hover-effect">
           <img
             src={downarrow}
@@ -50,21 +46,15 @@ const SkillsSection = () => {
             visible: { opacity: 1, transition: { duration: 0.5 } },
           }}
         >
-          <p
-            className="p-inika text-lg font-medium mb-10"
-            style={{ color: "rgba(0, 0, 0, 0.52)" }}
-          >
-            I am a quick learner who can adapt rapidly to new challenges. With a
-            solid foundation in computer science and engineering principles, I
-            know what it takes to solve complex problems. Below are highlights
-            of my technical skills:
+          <p className="p-inika text-lg font-medium mb-10" style={{ color: "rgba(0, 0, 0, 0.52)" }}>
+            I am a quick learner who can adapt rapidly to new challenges. With a solid foundation in computer science
+            and engineering principles, I know what it takes to solve complex problems. Below are highlights of my
+            technical skills/language proficiency:
           </p>
           {skills.map((skill) => (
             <div key={skill.name} className="mb-8 relative">
               <div className="flex justify-between mb-1">
-                <span className="p-heebo font-semibold tracking-widest">
-                  {skill.name}
-                </span>
+                <span className="p-heebo font-semibold tracking-widest">{skill.name}</span>
               </div>
               <div className="flex w-full h-2.5 rounded relative">
                 <div
@@ -74,14 +64,8 @@ const SkillsSection = () => {
                     backgroundColor: "#1E1E1E",
                   }}
                 ></div>
-                <div
-                  className="flex-grow h-full rounded-r"
-                  style={{ backgroundColor: "rgba(30, 30, 30, 0.43)" }}
-                ></div>
-                <div
-                  className="absolute top-[-46px]"
-                  style={{ left: `calc(${skill.level}% - 24px)` }}
-                >
+                <div className="flex-grow h-full rounded-r" style={{ backgroundColor: "rgba(30, 30, 30, 0.43)" }}></div>
+                <div className="absolute top-[-46px]" style={{ left: `calc(${skill.level}% - 24px)` }}>
                   <img
                     src={numbox}
                     alt={`${skill.level}%`}
