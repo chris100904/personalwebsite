@@ -37,6 +37,16 @@ html {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.hover-effect-dropdown {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform-origin: left;
+}
+
+.hover-effect-dropdown:hover {
+  transform: scale(1.1);
+  filter: invert(0.6)
+}
+
 .hover-effect:hover {
   transform: scale(1.1);
   filter: invert(0.9);
