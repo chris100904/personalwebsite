@@ -9,6 +9,12 @@ import x from "../assets/x.png";
 
 const experiences = [
   {
+    title: "Incoming Undergraduate Research Assistant",
+    company: "Brown University IVL Lab (BRICS)",
+    duration: "September 2024 - December 2024",
+    description: "Will be developing and maintaining low-level software for multi-camera systems in C++ and Python, contributing to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects. Will be contributing to the design of hardware components through 3D modeling in Autodesk Inventor and Fusion360.",
+  },
+  {
     title: "Software Engineer Intern",
     company: "Vane",
     duration: "July 2024 - Present",
