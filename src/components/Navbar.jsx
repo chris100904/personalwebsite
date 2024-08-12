@@ -41,6 +41,9 @@ const Navbar = ({ isNavbarVisible }) => {
         <a href="#home" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
           HOME
         </a>
+        <a href="#about" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+          ABOUT
+        </a>
         <a href="#resume" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
           RESUME
         </a>
@@ -58,7 +61,7 @@ const Navbar = ({ isNavbarVisible }) => {
     return (
       <div
         className={`fixed inset-y-0 left-0 z-30 w-3/4 transition-transform transform ${
-          isDropdownOpen ? "translate-x-0" : "-translate-x-full"
+          isDropdownOpen ? "translate-x-0 duration-200" : "-translate-x-full duration-200"
         } bg-white p-6 flex flex-col gap-4 shadow-lg`}
       >
         <button className="self-end mb-4" onClick={toggleDropdown}>
@@ -80,7 +83,7 @@ const Navbar = ({ isNavbarVisible }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      const minWidth = 600; // Adjust this value as needed
+      const minWidth = 640; // Adjust this value as needed
       const isNowSmallScreen = window.innerWidth < minWidth;
       setIsSmallScreen(isNowSmallScreen);
 
@@ -130,7 +133,12 @@ const Navbar = ({ isNavbarVisible }) => {
           {renderNavbar()}
         </div>
       </nav>
-      {isDropdownOpen && <div className="fixed inset-y-0 right-0 w-1/4 z-20 bg-black opacity-50 backdrop-blur-sm" onClick={closeDropdown}/>}
+      {isDropdownOpen && (
+        <div
+          className="fixed inset-y-0 right-0 w-1/4 z-20 bg-black opacity-50 backdrop-blur-sm"
+          onClick={closeDropdown}
+        />
+      )}
     </>
   );
 };

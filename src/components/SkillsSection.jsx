@@ -46,7 +46,7 @@ const SkillsSection = () => {
             visible: { opacity: 1, transition: { duration: 0.5 } },
           }}
         >
-          <p className="p-inika text-lg font-medium mb-10" style={{ color: "rgba(0, 0, 0, 0.52)" }}>
+          <p className="p-inika text-lg font-medium mb-10 text-black/80">
             I am a quick learner who can adapt rapidly to new challenges. With a solid foundation in computer science
             and engineering principles, I know what it takes to solve complex problems. Below are highlights of my
             technical skills/language proficiency:
