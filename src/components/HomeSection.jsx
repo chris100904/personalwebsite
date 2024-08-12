@@ -98,7 +98,7 @@ const HomeSection = () => {
               className="flex flex-col w-full md:w-1/2 gap-6 md:border-solid md:gap-12 border-none md:border-r md:border-black px-4 md:px-10"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={{
                 hidden: { opacity: 0, x: -200 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
@@ -139,7 +139,7 @@ const HomeSection = () => {
               className="flex-1 mt-8 md:mt-0"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={{
                 hidden: { opacity: 0, x: 100 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
