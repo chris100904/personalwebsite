@@ -25,6 +25,11 @@ const HomeSection = () => {
     };
   }, []);
 
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
     <div
       className="w-screen min-h-screen bg-cover bg-center relative z-0"
@@ -45,27 +50,38 @@ const HomeSection = () => {
         data-bgcolor="home-color"
         className="min-h-screen flex flex-col items-center pt-20 relative z-0"
       >
-        <div className="absolute top-1/3 flex flex-col items-center gap-12">
-          <div className="flex flex-col">
-            <h1 className="text-center text-6xl sm:text-8xl font-karla">Christopher Chen</h1>
-          </div>
-          <div className="flex flex-row">
-            <div className="flex gap-4 sm:gap-8">
-              <a href="https://github.com/chris100904">
-                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={github} alt="github" />
-              </a>
-              <a href="https://www.linkedin.com/in/christopher-chen-236323234/">
-                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={linkedin} alt="linkedin" />
-              </a>
-              <a href="mailto:christopher.chen.1004@gmail.com">
-                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={email} alt="email" />
-              </a>
+        <div className="flex flex-col items-center ">
+          <div className="absolute top-1/3 flex flex-col items-center">
+            {/* Container for Christopher Chen and Images */}
+            <motion.div
+              className="flex flex-col items-center gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInVariant}
+            >
+              <h1 className="text-center text-5xl sm:text-8xl font-karla">Christopher Chen</h1>
+              <div className="flex gap-4 sm:gap-8">
+                <a href="https://github.com/chris100904">
+                  <img className="hover-effect h-10 w-10 sm:h-16 sm:w-16" src={github} alt="github" />
+                </a>
+                <a href="https://www.linkedin.com/in/christopher-chen-236323234/">
+                  <img className="hover-effect h-10 w-10 sm:h-16 sm:w-16" src={linkedin} alt="linkedin" />
+                </a>
+                <a href="mailto:christopher.chen.1004@gmail.com">
+                  <img className="hover-effect h-10 w-10 sm:h-16 sm:w-16" src={email} alt="email" />
+                </a>
+              </div>
+            </motion.div>
+            {/* Container for Next Button */}
+            <div className="mt-36">
+              {/* Adjust the margin top to control the gap */}
+              <NextPage href="#about" isBrightBackground={false} />
             </div>
           </div>
         </div>
       </section>
       <section
-        id="home"
+        id="about"
         data-bgcolor="home-color"
         className="min-h-screen flex flex-col items-center pt-20 relative z-0"
       >
@@ -79,9 +95,15 @@ const HomeSection = () => {
             {/* Left Section */}
             <motion.div
               className="flex flex-col w-full md:w-1/2 gap-6 md:gap-12 border-r border-black px-4 md:px-10"
-              {...slideAnimation("left")}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: -200 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+              }}
             >
-              <h1 className="h1-christopher-chen w-1/2">Christopher Chen</h1>
+              {/* <h1 className="h1-christopher-chen w-1/2">Christopher Chen</h1> */}
               <div className="flex flex-col md:flex-row gap-4 md:gap-10">
                 <img
                   src={headshot}
@@ -96,9 +118,18 @@ const HomeSection = () => {
               </div>
             </motion.div>
             {/* Right Section */}
-            <div className="flex-1 mt-8 md:mt-0">
+            <motion.div
+              className="flex-1 mt-8 md:mt-0"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+              }}
+            >
               <SkillsSection />
-            </div>
+            </motion.div>
           </div>
           <NextPage href="#resume" isBrightBackground={false} />
         </div>
