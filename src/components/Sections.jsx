@@ -10,7 +10,7 @@ const Sections = ({ toggleModal }) => {
     <div>
       <HomeSection />
       <ResumeSection toggleModal={toggleModal} />
-      <ProjectsSection toggleModal={toggleModal}/>
+      <ProjectsSection toggleModal={toggleModal} />
       {/* <ActivitiesSection /> */}
       <ContactSection />
     </div>

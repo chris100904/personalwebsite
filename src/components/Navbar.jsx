@@ -124,7 +124,7 @@ const Navbar = ({ isNavbarVisible }) => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 z-20 p-4 ${
+        className={`w-screen fixed top-0 z-20 p-4 ${
           isSmallScreen ? "align-left" : "border-b border-black"
         } transition-colors duration-300 ${bgColor}`}
         style={{ display: isNavbarVisible ? "block" : "none" }}

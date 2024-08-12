@@ -27,7 +27,7 @@ const HomeSection = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center relative z-0"
+      className="w-screen min-h-screen bg-cover bg-center relative z-0"
       style={{
         backgroundImage: `url(${homeBackground})`,
       }}
@@ -40,13 +40,30 @@ const HomeSection = () => {
           zIndex: -1,
         }}
       ></div>
-      {/* <section
+      <section
         id="home"
         data-bgcolor="home-color"
         className="min-h-screen flex flex-col items-center pt-20 relative z-0"
       >
-        hi
-      </section> */}
+        <div className="absolute top-1/3 flex flex-col items-center gap-12">
+          <div className="flex flex-col">
+            <h1 className="text-center text-6xl sm:text-8xl font-karla">Christopher Chen</h1>
+          </div>
+          <div className="flex flex-row">
+            <div className="flex gap-4 sm:gap-8">
+              <a href="https://github.com/chris100904">
+                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={github} alt="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/christopher-chen-236323234/">
+                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={linkedin} alt="linkedin" />
+              </a>
+              <a href="mailto:christopher.chen.1004@gmail.com">
+                <img className="hover-effect h-12 w-12 sm:h-16 sm:w-16" src={email} alt="email" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section
         id="home"
         data-bgcolor="home-color"
@@ -76,17 +93,6 @@ const HomeSection = () => {
                   Applied Mathematics. My interests currently lie in software engineering, AI, and data science, but I'm
                   always open to exploring more fields as I grow!
                 </p>
-              </div>
-              <div className="flex gap-4 md:gap-8">
-                <a href="https://github.com/chris100904">
-                  <img className="hover-effect sm:w-8 sm:h-8 md:w-16 md:h-16" src={github} alt="github" />
-                </a>
-                <a href="https://www.linkedin.com/in/christopher-chen-236323234/">
-                  <img className="hover-effect sm:w-8 sm:h-8 md:w-16 md:h-16" src={linkedin} alt="linkedin" />
-                </a>
-                <a href="mailto:christopher.chen.1004@gmail.com">
-                  <img className="hover-effect sm:w-8 sm:h-8 md:w-16 md:h-16" src={email} alt="email" />
-                </a>
               </div>
             </motion.div>
             {/* Right Section */}

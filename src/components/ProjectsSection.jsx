@@ -93,10 +93,10 @@ const ProjectsSection = ({ toggleModal }) => {
     <section
       id="projects"
       data-bgcolor="bg-gray-300"
-      className="w-full bg-gray-300 px-20 py-10 min-h-screen"
+      className="w-screen bg-gray-300 px-20 py-10 min-h-screen"
     >
       {/* Dark Gray Blur */}
-      <div
+      {/* <div
         className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
         style={{
           width: "250px",
@@ -105,9 +105,9 @@ const ProjectsSection = ({ toggleModal }) => {
           top: "3000px",
           left: "150px",
         }}
-      ></div>
+      ></div> */}
       {/* Medium Gray Blur */}
-      <div
+      {/* <div
         className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
         style={{
           width: "300px",
@@ -116,9 +116,9 @@ const ProjectsSection = ({ toggleModal }) => {
           top: "2500px",
           right: "100px",
         }}
-      ></div>
+      ></div> */}
       {/* Another Blur Spot */}
-      <div
+      {/* <div
         className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
         style={{
           width: "200px",
@@ -127,7 +127,7 @@ const ProjectsSection = ({ toggleModal }) => {
           top: "3400px",
           left: "1000px",
         }}
-      ></div>
+      ></div> */}
       <div className="flex flex-col mt-10">
         <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
           PROJECTS
