@@ -38,19 +38,39 @@ const Navbar = ({ isNavbarVisible }) => {
   const renderNavLinks = () => {
     return (
       <>
-        <a href="#home" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+        <a
+          href="#home"
+          className={`text-black nav-link ${isDropdownOpen ? "hover-effect-dropdown" : "hover-effect"}`}
+          onClick={closeDropdown}
+        >
           HOME
         </a>
-        <a href="#about" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+        <a
+          href="#about"
+          className={`text-black nav-link ${isDropdownOpen ? "hover-effect-dropdown" : "hover-effect"}`}
+          onClick={closeDropdown}
+        >
           ABOUT
         </a>
-        <a href="#resume" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+        <a
+          href="#resume"
+          className={`text-black nav-link ${isDropdownOpen ? "hover-effect-dropdown" : "hover-effect"}`}
+          onClick={closeDropdown}
+        >
           RESUME
         </a>
-        <a href="#projects" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+        <a
+          href="#projects"
+          className={`text-black nav-link ${isDropdownOpen ? "hover-effect-dropdown" : "hover-effect"}`}
+          onClick={closeDropdown}
+        >
           PROJECTS
         </a>
-        <a href="#contact" className="text-black nav-link hover-effect-dropdown" onClick={closeDropdown}>
+        <a
+          href="#contact"
+          className={`text-black nav-link ${isDropdownOpen ? "hover-effect-dropdown" : "hover-effect"}`}
+          onClick={closeDropdown}
+        >
           CONTACT
         </a>
       </>
@@ -124,7 +144,7 @@ const Navbar = ({ isNavbarVisible }) => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 z-20 p-4 ${
+        className={`w-screen fixed top-0 z-20 p-4 ${
           isSmallScreen ? "align-left" : "border-b border-black"
         } transition-colors duration-300 ${bgColor}`}
         style={{ display: isNavbarVisible ? "block" : "none" }}
