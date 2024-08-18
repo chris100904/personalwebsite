@@ -13,6 +13,7 @@ import NextPage from "./NextPage";
 
 const HomeSection = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [showFunFacts, setShowFunFacts] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +96,7 @@ const HomeSection = () => {
           <div className="relative z-10 flex flex-col md:flex-row px-4 md:px-10">
             {/* Left Section */}
             <motion.div
-              className="flex flex-col w-full md:w-1/2 gap-6 md:border-solid md:gap-12 border-none md:border-r md:border-black px-4 md:px-10"
+              className="flex flex-col w-full md:w-1/2 gap-6 md:border-solid md:gap-12 border-none md:border-r md:border-black px-4 md:px-10 overflow-hidden"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -113,25 +114,61 @@ const HomeSection = () => {
                 />
                 <ProfileSection />
               </div>
-              <p className="p-heebo text-base md:text-lg w-full text-black/80 mt-4">
-                Hi, welcome to my personal website! I'm a junior at Brown University studying Computer Science and
-                Applied Mathematics. My interests currently lie in software engineering, AI, and data science, but I'm
-                always open to exploring more fields as I grow!
+              <p className="px-4 p-heebo text-base md:text-lg w-full text-black/80 mt-4">
+                Hi, welcome to my personal website! I'm a junior at Brown University studying{" "}
+                <b>Computer Science and Applied Mathematics</b>. My interests currently lie in software engineering, AI,
+                and data science, but I'm always open to exploring more fields as I grow!
                 <br></br>
                 <br></br>
-                In my free time, I like to spend time on some (possibly generic...) hobbies like: playing piano,
-                working out, and learning new languages. I'm an avid pianist and have been studying since the age of
-                9. At Brown, I take advantage of their chamber music elective to play lots of challenging and exciting
-                pieces with my other musician friends! You can click here to see some recordings of my performances! I
-                also used to compose, but that was back in middle school... ask me about that if you're really
-                interested, haha.
+                {/* <button
+                  className="text-black/80 hover-effect cursor-pointer"
+                  onClick={() => setShowFunFacts(!showFunFacts)}
+                >
+                  Fun Facts
+                </button> */}
+                <div className="flex flex-row items-center">
+                  <div className="font-bold tracking-wider">FUN FACTS</div>
+                  <button
+                    onClick={() => setShowFunFacts((prevShowFunFacts) => !prevShowFunFacts)}
+                    className="px-4 flex hover-effect"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`size-6 transition-transform duration-200 ${
+                        showFunFacts ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+                </div>
+                <motion.ul
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: showFunFacts ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col list-disc ml-6 mt-2 gap-2"
+                >
+                  <li>I've played the piano for over 10 years and still continue to study it in college through Brown's Applied Music Program and chamber music opportunities</li>
+                  <li>I am an avid language learner! I currently take elective classes in Korean and have previously studied Chinese and Spanish to an intermediate-advanced level as well</li>
+                  <li>I have a somewhat chronic left wrist injury from ringing a 15lb handbell with wrong technique in 8th grade (<em>yes</em>, my middle school had a selective handbell choir; <em>yes</em>, handbells as in the Christmas handbells, but even cooler)</li>
+                </motion.ul>
+                {/* In my free time, I like to spend time on some (possibly generic...) hobbies like: playing piano, working
+                out, and learning new languages. I'm an avid pianist and have been studying since the age of 9. At
+                Brown, I take advantage of their chamber music elective to play lots of challenging and exciting pieces
+                with my other musician friends! You can click here to see some recordings of my performances! I also
+                used to compose, but that was back in middle school... ask me about that if you're really interested,
+                haha.
                 <br></br>
-                <br></br>
-                I also really like learning languages. I started self-studying Korean when I was in high school, and now 
-                I take classes in Korean at Brown. It's really nice being able to talk with my friends in their native 
-                languages, and it really helps broaden my perspective on linguistics. Korean is sort of like my cool party trick;
-                I've tricked so many people into thinking I'm a Korean American who just happens to have bad vocab! Besides Korean, I
-                want to continue progressing with Mandarin, and also learn some of my family dialects in Chinese: Fuzhou dialect and Taiwanese Hokkien.
+                <br></br>I also really like learning languages. I started self-studying Korean when I was in high
+                school, and now I take classes in Korean at Brown. It's really nice being able to talk with my friends
+                in their native languages, and it really helps broaden my perspective on linguistics. Korean is sort of
+                like my cool party trick; I've tricked so many people into thinking I'm a Korean American who just
+                happens to have bad vocab! Besides Korean, I want to continue progressing with Mandarin, and also learn
+                some of my family dialects in Chinese: Fuzhou dialect and Taiwanese Hokkien. */}
               </p>
             </motion.div>
             {/* Right Section */}

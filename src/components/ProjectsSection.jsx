@@ -94,6 +94,7 @@ const ProjectsSection = ({ toggleModal }) => {
       id="projects"
       data-bgcolor="bg-gray-300"
       className="w-screen bg-gray-300 px-20 py-10 min-h-screen"
+      style={{ background: "linear-gradient(180deg, rgba(233, 232, 232, 0.94) 0%, rgba(215, 215, 215, 0.94) 35.7%, rgba(255, 255, 255, 0.94) 100%)" }}
     >
       {/* Dark Gray Blur */}
       {/* <div

@@ -12,13 +12,15 @@ const experiences = [
     title: "Incoming Undergraduate Research Assistant",
     company: "Brown University IVL Lab (BRICS)",
     duration: "September 2024 - December 2024",
-    description: "Will be developing and maintaining low-level software for multi-camera systems in C++ and Python, contributing to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects. Will be contributing to the design of hardware components through 3D modeling in Autodesk Inventor and Fusion360.",
+    description:
+      "Will be developing and maintaining low-level software for multi-camera systems in C++ and Python, contributing to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects. Will be contributing to the design of hardware components through 3D modeling in Autodesk Inventor and Fusion360.",
   },
   {
     title: "Software Engineer Intern",
     company: "Vane",
     duration: "July 2024 - Present",
-    description:  "At a dynamic startup, the responsibilities spanned multiple disciplines in full-stack development. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+    description:
+      "At a dynamic startup, the responsibilities spanned multiple disciplines in full-stack development. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
   },
   {
     title: "Data Analyst and Marketing Intern",
@@ -60,7 +62,7 @@ const education = [
   },
 ];
 
-Modal.setAppElement("#root"); 
+Modal.setAppElement("#root");
 
 const ResumeSection = ({ toggleModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -92,6 +94,9 @@ const ResumeSection = ({ toggleModal }) => {
       id="resume"
       data-bgcolor="bg-white"
       className="relative w-full px-20 py-10"
+      style={{
+        background: "linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(233, 232, 232, 0.94) 100%)",
+      }}
     >
       {/* Dark Gray Blur */}
       <div
@@ -128,13 +133,8 @@ const ResumeSection = ({ toggleModal }) => {
       ></div>
 
       <div className="relative flex flex-col mt-10">
-        <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
-          RESUME
-        </h2>
-        <p
-          className="p-heebo flex justify-center text-xl font-medium mb-10"
-          style={{ color: "rgba(0, 0, 0, 0.52)" }}
-        >
+        <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">RESUME</h2>
+        <p className="p-heebo flex justify-center text-xl font-medium mb-10" style={{ color: "rgba(0, 0, 0, 0.52)" }}>
           Here are my work experiences and education.
         </p>
         <div
@@ -165,20 +165,11 @@ const ResumeSection = ({ toggleModal }) => {
           overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300"
         >
           <div className="h-12">
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 hover-close"
-            >
+            <button onClick={closeModal} className="absolute top-4 right-4 hover-close">
               <img src={x} alt="close" className="w-10" />
             </button>
           </div>
-          <iframe
-            src={resumePDF}
-            title="Resume"
-            width="100%"
-            height="600px"
-            className="border-0"
-          />
+          <iframe src={resumePDF} title="Resume" width="100%" height="600px" className="border-0" />
         </Modal>
 
         <div className="flex flex-col gap-8">
@@ -202,11 +193,7 @@ const ResumeSection = ({ toggleModal }) => {
                       </p>
                     </div>
                     <div className="relative w-20 h-full">
-                      <img
-                        src={workIcon}
-                        alt="work icon"
-                        className="absolute left-1/2 transform -translate-x-1/2"
-                      />
+                      <img src={workIcon} alt="work icon" className="absolute left-1/2 transform -translate-x-1/2" />
                       <div
                         className="h-full absolute left-1/2 transform -translate-y-2 -translate-x-1/2"
                         style={{
@@ -217,16 +204,10 @@ const ResumeSection = ({ toggleModal }) => {
                       ></div>
                     </div>
                     <div className="flex flex-col w-2/3 pb-10 pr-80">
-                      <h5
-                        className="text-xl font-bold p-heebo tracking-wide"
-                        style={{ color: "#405BBA" }}
-                      >
+                      <h5 className="text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
                         {exp.company}
                       </h5>
-                      <div
-                        className="mb-6 w-12"
-                        style={{ height: "2px", backgroundColor: "#1E1E1E" }}
-                      ></div>
+                      <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>
                       <p
                         className="text-base font-extralight p-heebo"
                         style={{
@@ -250,9 +231,7 @@ const ResumeSection = ({ toggleModal }) => {
                 <div key={index} className="flex">
                   <div className="flex flex-row w-full pl-32">
                     <div className="flex flex-col w-1/3 text-right pl-52 pb-32">
-                      <h4 className="text-xl font-bold p-heebo">
-                        {edu.degree}
-                      </h4>
+                      <h4 className="text-xl font-bold p-heebo">{edu.degree}</h4>
                       <p
                         className="text-base p-heebo"
                         style={{
@@ -278,16 +257,10 @@ const ResumeSection = ({ toggleModal }) => {
                       ></div>
                     </div>
                     <div className="flex flex-col w-2/3  pr-80">
-                      <h5
-                        className="text-xl font-bold p-heebo tracking-wide"
-                        style={{ color: "#405BBA" }}
-                      >
+                      <h5 className="text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
                         {edu.school}
                       </h5>
-                      <div
-                        className="mb-6 w-12"
-                        style={{ height: "2px", backgroundColor: "#1E1E1E" }}
-                      ></div>
+                      <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>
                       <p
                         className="text-base font-extralight p-heebo"
                         style={{
