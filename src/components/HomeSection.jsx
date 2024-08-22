@@ -10,10 +10,14 @@ import { slideAnimation } from "../motion";
 import ProfileSection from "./ProfileSection";
 import "../index.css";
 import NextPage from "./NextPage";
+import { Carousel } from "react-responsive-carousel";
 
 const HomeSection = () => {
   const [scrollY, setScrollY] = useState(0);
   const [showFunFacts, setShowFunFacts] = useState(false);
+  const [showPianoModal, setShowPianoModal] = useState(false);
+
+  const videos = ["https://youtu.be/UxotXCfdUk0", "https://youtu.be/9ZVV4Mgs5mo", "https://youtu.be/n1W-JVt0M1I", "https://youtu.be/KpuJpP3tFTs?si=1Kmj0Aw_5g3SM5h7&t=50"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,9 +142,7 @@ const HomeSection = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className={`size-6 transition-transform duration-200 ${
-                        showFunFacts ? "rotate-180" : ""
-                      }`}
+                      className={`size-6 transition-transform duration-200 ${showFunFacts ? "rotate-180" : ""}`}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                     </svg>
@@ -152,9 +154,29 @@ const HomeSection = () => {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col list-disc ml-6 mt-2 gap-2"
                 >
-                  <li>I've played the piano for over 10 years and still continue to study it in college through Brown's Applied Music Program and chamber music opportunities</li>
-                  <li>I am an avid language learner! I currently take elective classes in Korean and have previously studied Chinese and Spanish to an intermediate-advanced level as well</li>
-                  <li>I have a somewhat chronic left wrist injury from ringing a 15lb handbell with wrong technique in 8th grade (<em>yes</em>, my middle school had a selective handbell choir; <em>yes</em>, handbells as in the Christmas handbells, but even cooler)</li>
+                  <li>
+                    I've played the piano for over 10 years and still continue to study it in college through Brown's
+                    Applied Music Program and chamber music opportunities.
+                    <a
+                      className="px-1 text-blue-700 hover:text-blue-600 cursor-pointer "
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowPianoModal(true);
+                      }}
+                    >
+                      Click here
+                    </a>
+                    if you want to see some recent recordings/performances!
+                  </li>
+                  <li>
+                    I am an avid language learner! I currently take elective classes in Korean and have previously
+                    studied Chinese and Spanish to an intermediate-advanced level as well
+                  </li>
+                  <li>
+                    I have a somewhat chronic left wrist injury from ringing a 15lb handbell with wrong technique in 8th
+                    grade (<em>yes</em>, my middle school had a selective handbell choir; <em>yes</em>, handbells as in
+                    the Christmas handbells, but even cooler)
+                  </li>
                 </motion.ul>
                 {/* In my free time, I like to spend time on some (possibly generic...) hobbies like: playing piano, working
                 out, and learning new languages. I'm an avid pianist and have been studying since the age of 9. At
