@@ -8,10 +8,9 @@ import ContactSection from "./ContactSection";
 const Sections = ({ toggleModal }) => {
   return (
     <div>
-      <HomeSection />
+      <HomeSection toggleModal={toggleModal}/>
       <ResumeSection toggleModal={toggleModal} />
       <ProjectsSection toggleModal={toggleModal} />
-      {/* <ActivitiesSection /> */}
       <ContactSection />
     </div>
   );

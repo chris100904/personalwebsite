@@ -20,7 +20,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <motion.div className="flex flex-col w-full px-20" {...slideAnimation("right")}>
+    <motion.div className="flex flex-col w-full px-10" {...slideAnimation("right")}>
       <div className="flex items-center mb-6">
         <h2 className="text-3xl font-bold p-heebo tracking-widest flex">SKILLS</h2>
         {/* <button onClick={toggleSkills} className="px-4 flex hover-effect">
