@@ -100,9 +100,9 @@ const HomeSection = ({ toggleModal }) => {
                 </a>
               </div>
             </motion.div>
-            <div className="mt-36">
-              <NextPage href="#about" isBrightBackground={false} />
-            </div>
+          </div>
+          <div className="absolute bottom-4 w-full">
+            <NextPage href="#about" isBrightBackground={false} />
           </div>
         </div>
       </section>
@@ -111,13 +111,8 @@ const HomeSection = ({ toggleModal }) => {
         data-bgcolor="home-color"
         className="min-h-screen flex flex-col items-center pt-20 relative z-0"
       >
-        <div
-          className="flex flex-col relative z-10 gap-8 pb-4"
-          style={{
-            transition: "filter 0.1s ease-out",
-          }}
-        >
-          <div className="relative z-10 flex flex-col md:flex-row px-4 md:px-10">
+        <div className="flex flex-col relative gap-8">
+          <div className="relative flex flex-col md:flex-row px-4 md:px-10 mb-32">
             <motion.div
               className="flex flex-col w-full md:w-1/2 gap-6 md:border-solid md:gap-12 border-none md:border-r md:border-black px-4 md:px-10 overflow-hidden"
               initial="hidden"
@@ -160,36 +155,38 @@ const HomeSection = ({ toggleModal }) => {
                     </svg>
                   </button>
                 </div>
-                <motion.ul
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: showFunFacts ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="flex flex-col list-disc ml-6 mt-2 gap-2"
-                >
-                  <li>
-                    I've played the piano for over 10 years and still continue to study it in college through Brown's
-                    Applied Music Program and chamber music opportunities.
-                    <a
-                      className="px-1 text-blue-700 hover:text-blue-600 cursor-pointer"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        openModal();
-                      }}
-                    >
-                      Click here
-                    </a>
-                    if you want to see some recent recordings/performances!
-                  </li>
-                  <li>
-                    I am an avid language learner! I currently take elective classes in Korean and have previously
-                    studied Chinese and Spanish to an intermediate-advanced level as well
-                  </li>
-                  <li>
-                    I have a somewhat chronic left wrist injury from ringing a 15lb handbell with wrong technique in 8th
-                    grade (<em>yes</em>, my middle school had a selective handbell choir; <em>yes</em>, handbells as in
-                    the Christmas handbells, but even cooler)
-                  </li>
-                </motion.ul>
+                {showFunFacts && (
+                  <motion.ul
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col list-disc ml-6 mt-2 gap-2"
+                  >
+                    <li>
+                      I've played the piano for over 10 years and still continue to study it in college through Brown's
+                      Applied Music Program and chamber music opportunities.
+                      <a
+                        className="px-1 text-blue-700 hover:text-blue-600 cursor-pointer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          openModal();
+                        }}
+                      >
+                        Click here
+                      </a>
+                      if you want to see some recent recordings/performances!
+                    </li>
+                    <li>
+                      I am an avid language learner! I currently take elective classes in Korean and have previously
+                      studied Chinese and Spanish to an intermediate-advanced level as well
+                    </li>
+                    <li>
+                      I have a somewhat chronic left wrist injury from ringing a 15lb handbell with wrong technique in
+                      8th grade (<em>yes</em>, my middle school had a selective handbell choir; <em>yes</em>, handbells
+                      as in the Christmas handbells, but even cooler)
+                    </li>
+                  </motion.ul>
+                )}
               </p>
             </motion.div>
             <motion.div
@@ -205,6 +202,9 @@ const HomeSection = ({ toggleModal }) => {
               <SkillsSection />
             </motion.div>
           </div>
+          {/* <NextPage href="#resume" className="flex" isBrightBackground={false} /> */}
+        </div>
+        <div className="absolute bottom-4 w-full">
           <NextPage href="#resume" isBrightBackground={false} />
         </div>
       </section>

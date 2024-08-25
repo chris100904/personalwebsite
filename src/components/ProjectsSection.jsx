@@ -77,6 +77,7 @@ const ProjectsSection = ({ toggleModal }) => {
       document.body.style.overflow = "auto";
     };
   }, [modalIsOpen]);
+
   const openModal = (project) => {
     setSelectedProject(project);
     setModalIsOpen(true);
@@ -93,40 +94,25 @@ const ProjectsSection = ({ toggleModal }) => {
     <section
       id="projects"
       data-bgcolor="bg-gray-300"
-      className="w-screen bg-gray-300 px-10 sm:px-20 py-10 min-h-screen"
-      style={{ background: "linear-gradient(180deg, rgba(233, 232, 232, 0.94) 0%, rgba(215, 215, 215, 0.94) 35.7%, rgba(255, 255, 255, 0.94) 100%)" }}
+      className="relative w-screen bg-gray-300 px-10 sm:px-20 py-10 min-h-screen flex flex-col justify-between"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(233, 232, 232, 0.94) 0%, rgba(215, 215, 215, 0.94) 35.7%, rgba(255, 255, 255, 0.94) 100%)",
+      }}
     >
       <div className="flex flex-col mt-10">
-        <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
-          PROJECTS
-        </h2>
-        <p
-          className="p-heebo flex justify-center text-xl font-medium mb-10"
-          style={{ color: "rgba(0, 0, 0, 0.52)" }}
-        >
-          Check out some of my creations! Some of these are work in progresses,
-          so keep posted for updates!
+        <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">PROJECTS</h2>
+        <p className="p-heebo flex justify-center text-xl font-medium mb-10" style={{ color: "rgba(0, 0, 0, 0.52)" }}>
+          Check out some of my creations! Some of these are works in progress, so keep posted for updates!
         </p>
-        <div className="projects-page">
-          <div className="projects-grid gap-4 px-0 md:px-20">
+        <div className="flex flex-col items-center gap-8 relative">
+          <div className="flex projects-grid gap-4 px-0 md:px-20">
             {projects.map((project) => (
-              <div
-                key={project.id}
-                className="project-card"
-                onClick={() => openModal(project)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
+              <div key={project.id} className="project-card" onClick={() => openModal(project)}>
+                <img src={project.image} alt={project.title} className="project-image" />
                 <div className="project-overview">
-                  <div className="project-title text-sm font-extrabold">
-                    {project.title}
-                  </div>
-                  <div className="project-category text-xs font-thin">
-                    {project.category}
-                  </div>
+                  <div className="project-title text-sm font-extrabold">{project.title}</div>
+                  <div className="project-category text-xs font-thin">{project.category}</div>
                 </div>
               </div>
             ))}
@@ -141,20 +127,11 @@ const ProjectsSection = ({ toggleModal }) => {
             overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300"
           >
             <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full flex flex-col space-y-2">
-              <img
-                src={selectedProject.openimage}
-                alt={selectedProject.title}
-                className="w-full object-cover mb-2"
-              />
-              <h2 className="text-2xl font-bold mb-2 px-8">
-                {selectedProject.title}
-              </h2>
+              <img src={selectedProject.openimage} alt={selectedProject.title} className="w-full object-cover mb-2" />
+              <h2 className="text-2xl font-bold mb-2 px-8">{selectedProject.title}</h2>
               <p className="px-8 pb-4 text-sm">{selectedProject.description}</p>
               <div className="flex items-center bg-black px-8 h-14 gap-4 rounded-b-lg">
-                <a
-                  href={selectedProject.github}
-                  className="project-modal-hover"
-                >
+                <a href={selectedProject.github} className="project-modal-hover">
                   DETAILS
                 </a>
                 <button onClick={closeModal} className="project-modal-hover">
@@ -164,7 +141,9 @@ const ProjectsSection = ({ toggleModal }) => {
             </div>
           </Modal>
         )}
-        <NextPage href="#contact" marginTop="100px" isBrightBackground={true} />
+      </div>
+      <div className="flex justify-center mt-10">
+        <NextPage href="#contact" isBrightBackground={true} />
       </div>
     </section>
   );

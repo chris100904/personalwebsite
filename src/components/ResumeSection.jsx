@@ -16,7 +16,7 @@ const experiences = [
       "Will be developing and maintaining low-level software for multi-camera systems in C++ and Python, contributing to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects. Will be contributing to the design of hardware components through 3D modeling in Autodesk Inventor and Fusion360.",
   },
   {
-    title: "Software Engineer Intern",
+    title: "Software Engineering Intern",
     company: "Vane",
     duration: "July 2024 - Present",
     description:
@@ -107,6 +107,7 @@ const ResumeSection = ({ toggleModal }) => {
           background: "darkgray",
           top: "-50px",
           left: "100px",
+          zIndex: "-1",
         }}
       ></div>
       {/* Medium Gray Blur */}
@@ -118,6 +119,7 @@ const ResumeSection = ({ toggleModal }) => {
           background: "gray",
           top: "300px",
           right: "200px",
+          zIndex: "-1",
         }}
       ></div>
       {/* Another Blur Spot */}
@@ -129,6 +131,7 @@ const ResumeSection = ({ toggleModal }) => {
           background: "darkgray",
           top: "600px",
           left: "500px",
+          zIndex: "-1",
         }}
       ></div>
 
@@ -182,11 +185,18 @@ const ResumeSection = ({ toggleModal }) => {
                 <div key={index} className="flex">
                   <div className="flex flex-row w-full">
                     <div className="flex flex-col w-1/3 text-right pb-32">
-                      <h4 className="text-lg sm:text-xl font-bold p-heebo">{exp.title}</h4>
+                      <h4
+                        className="text-base sm:text-xl font-bold p-heebo"
+                        style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
+                      >
+                        {exp.title}
+                      </h4>
                       <p
                         className="text-sm sm:text-base p-heebo"
                         style={{
                           color: "rgba(0, 0, 0, 0.72)",
+                          wordBreak: "break-word",
+                          overflowWrap: "break-word",
                         }}
                       >
                         {exp.duration}
@@ -203,7 +213,7 @@ const ResumeSection = ({ toggleModal }) => {
                         }}
                       ></div>
                     </div>
-                    <div className="flex flex-col w-2/3 pb-10 pr-0 sm:pr-16 md:pr-28">
+                    <div className="flex flex-col w-2/3 pb-10 pr-2 sm:pr-10 md:pr-10 lg:pr-44">
                       <h5
                         className="text-lg sm:text-xl pr-0 sm:pr-28 font-bold p-heebo tracking-wide"
                         style={{ color: "#405BBA" }}
@@ -234,7 +244,12 @@ const ResumeSection = ({ toggleModal }) => {
                 <div key={index} className="flex">
                   <div className="flex flex-row w-full">
                     <div className="flex flex-col w-1/3 text-right pb-32">
-                      <h4 className="text-lg sm:text-xl font-bold p-heebo">{edu.degree}</h4>
+                      <h4
+                        className="text-base sm:text-xl font-bold p-heebo"
+                        style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
+                      >
+                        {edu.degree}
+                      </h4>
                       <p
                         className="text-sm sm:text-base p-heebo"
                         style={{
@@ -259,7 +274,7 @@ const ResumeSection = ({ toggleModal }) => {
                         }}
                       ></div>
                     </div>
-                    <div className="flex flex-col w-2/3">
+                    <div className="flex flex-col w-2/3 pb-10 pr-2 sm:pr-10 md:pr-10 lg:pr-44">
                       <h5 className="text-lg sm:text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
                         {edu.school}
                       </h5>
@@ -278,8 +293,8 @@ const ResumeSection = ({ toggleModal }) => {
               ))}
             </div>
           </div>
+          <NextPage href="#projects" isBrightBackground={true} />
         </div>
-        <NextPage href="#projects" marginTop="20px" isBrightBackground={true} />
       </div>
     </section>
   );
