@@ -18,9 +18,9 @@ const experiences = [
   {
     title: "Software Engineer Intern",
     company: "Vane",
-    duration: "June 2024 - Present",
+    duration: "July 2024 - Present",
     description:
-      "At a dynamic startup, the responsibilities spanned multiple disciplines in full-stack development. Developed a reactive mobile app using Flutter and MongoDB,and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed over 500+ lines of code to the research and development of the social party chat feature for the mobile app, including updating MongoDB schemas and collections. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection with the MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+      "At a dynamic startup, the responsibilities spanned multiple disciplines in full-stack development. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
   },
   {
     title: "Data Analyst and Marketing Intern",
@@ -93,7 +93,7 @@ const ResumeSection = ({ toggleModal }) => {
     <section
       id="resume"
       data-bgcolor="bg-white"
-      className="relative w-full px-20 py-10"
+      className="relative w-full px-1 sm:px-10 py-10"
       style={{
         background: "linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(233, 232, 232, 0.94) 100%)",
       }}
@@ -180,11 +180,11 @@ const ResumeSection = ({ toggleModal }) => {
             <div className="flex flex-col">
               {experiences.map((exp, index) => (
                 <div key={index} className="flex">
-                  <div className="flex flex-row w-full pl-32">
-                    <div className="flex flex-col w-1/3 text-right pl-52 pb-32">
-                      <h4 className="text-xl font-bold p-heebo">{exp.title}</h4>
+                  <div className="flex flex-row w-full">
+                    <div className="flex flex-col w-1/3 text-right pb-32">
+                      <h4 className="text-lg sm:text-xl font-bold p-heebo">{exp.title}</h4>
                       <p
-                        className="text-base p-heebo"
+                        className="text-sm sm:text-base p-heebo"
                         style={{
                           color: "rgba(0, 0, 0, 0.72)",
                         }}
@@ -203,8 +203,11 @@ const ResumeSection = ({ toggleModal }) => {
                         }}
                       ></div>
                     </div>
-                    <div className="flex flex-col w-2/3 pb-10 pr-80">
-                      <h5 className="text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
+                    <div className="flex flex-col w-2/3 pb-10 pr-0 sm:pr-16 md:pr-28">
+                      <h5
+                        className="text-lg sm:text-xl pr-0 sm:pr-28 font-bold p-heebo tracking-wide"
+                        style={{ color: "#405BBA" }}
+                      >
                         {exp.company}
                       </h5>
                       <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>
@@ -229,11 +232,11 @@ const ResumeSection = ({ toggleModal }) => {
             <div className="flex flex-col">
               {education.map((edu, index) => (
                 <div key={index} className="flex">
-                  <div className="flex flex-row w-full pl-32">
-                    <div className="flex flex-col w-1/3 text-right pl-52 pb-32">
-                      <h4 className="text-xl font-bold p-heebo">{edu.degree}</h4>
+                  <div className="flex flex-row w-full">
+                    <div className="flex flex-col w-1/3 text-right pb-32">
+                      <h4 className="text-lg sm:text-xl font-bold p-heebo">{edu.degree}</h4>
                       <p
-                        className="text-base p-heebo"
+                        className="text-sm sm:text-base p-heebo"
                         style={{
                           color: "rgba(0, 0, 0, 0.72)",
                         }}
@@ -256,8 +259,8 @@ const ResumeSection = ({ toggleModal }) => {
                         }}
                       ></div>
                     </div>
-                    <div className="flex flex-col w-2/3  pr-80">
-                      <h5 className="text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
+                    <div className="flex flex-col w-2/3">
+                      <h5 className="text-lg sm:text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
                         {edu.school}
                       </h5>
                       <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>

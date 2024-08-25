@@ -93,42 +93,9 @@ const ProjectsSection = ({ toggleModal }) => {
     <section
       id="projects"
       data-bgcolor="bg-gray-300"
-      className="w-screen bg-gray-300 px-20 py-10 min-h-screen"
+      className="w-screen bg-gray-300 px-10 sm:px-20 py-10 min-h-screen"
       style={{ background: "linear-gradient(180deg, rgba(233, 232, 232, 0.94) 0%, rgba(215, 215, 215, 0.94) 35.7%, rgba(255, 255, 255, 0.94) 100%)" }}
     >
-      {/* Dark Gray Blur */}
-      {/* <div
-        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
-        style={{
-          width: "250px",
-          height: "250px",
-          background: "black",
-          top: "3000px",
-          left: "150px",
-        }}
-      ></div> */}
-      {/* Medium Gray Blur */}
-      {/* <div
-        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
-        style={{
-          width: "300px",
-          height: "300px",
-          background: "black",
-          top: "2500px",
-          right: "100px",
-        }}
-      ></div> */}
-      {/* Another Blur Spot */}
-      {/* <div
-        className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-20"
-        style={{
-          width: "200px",
-          height: "200px",
-          background: "black",
-          top: "3400px",
-          left: "1000px",
-        }}
-      ></div> */}
       <div className="flex flex-col mt-10">
         <h2 className="flex justify-center text-3xl font-bold p-heebo tracking-widest mb-6 blue">
           PROJECTS
@@ -140,8 +107,8 @@ const ProjectsSection = ({ toggleModal }) => {
           Check out some of my creations! Some of these are work in progresses,
           so keep posted for updates!
         </p>
-        <div className="projects-page px-32">
-          <div className="projects-grid gap-4 items-center justify-center">
+        <div className="projects-page">
+          <div className="projects-grid gap-4 px-0 md:px-20">
             {projects.map((project) => (
               <div
                 key={project.id}

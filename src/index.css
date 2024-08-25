@@ -139,17 +139,31 @@ html {
 .projects-grid {
   display: flex;
   flex-wrap: wrap; /* Wrap items onto multiple lines */
-  gap: 40px; /* Adjust the gap between project cards */
+  gap: 2rem; /* Adjust the gap between project cards */
   justify-content: center; /* Center align items horizontally */
 }
 
 .project-card {
   position: relative;
   cursor: pointer;
-  width: 350px; /* Adjust card width */
-  height: 250px; /* Adjust card height */
+  width: 350px;
+  height: 250px;
   transition: transform 0.3s;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 250px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 200px;
+    height: 140px;
+  }
 }
 
 .project-image {
