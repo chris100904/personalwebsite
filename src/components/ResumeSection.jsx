@@ -9,18 +9,25 @@ import x from "../assets/x.png";
 
 const experiences = [
   {
-    title: "Incoming Undergraduate Research Assistant",
+    title: "Software Engineering Intern",
+    company: "Vane",
+    duration: "June 2024 - Present",
+    description:
+      "At Vane, the responsibilities spanned multiple disciplines in full-stack development since it was a very small team. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+  },
+  {
+    title: "Undergraduate Research Assistant",
     company: "Brown University Interactive 3D Vision & Learning Lab (BRICS)",
     duration: "September 2024 - December 2024",
     description:
       "Currently working on the development of a WebAssembly-based web interface to compile and manage the existing C++ code for IVL's motion capture camera system. This will help contribute to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects.",
   },
   {
-    title: "Software Engineering Intern",
-    company: "Vane",
-    duration: "June 2024 - Present",
+    title: "Software Developer",
+    company: "Hack@Brown",
+    duration: "September 2024 - Present",
     description:
-      "At Vane, the responsibilities spanned multiple disciplines in full-stack development since it was a very small team. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+      "Working alongside a team of 8 developers to design Hack@Brown's website. This work involves design in HTML/CSS and Javascript/React, and we work closely with the UI/UX team to implement their designs. We also work on creating starter packs for hackathon attendees to help them get started with their projects, which range from topics such as cloud infrastructure, game development with Unity, to basic introductions to web development fremeworks.",
   },
   {
     title: "Data Analyst and Marketing Intern",
