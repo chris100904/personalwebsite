@@ -6,10 +6,13 @@ import numbox from "../assets/numbox.png";
 const skills = [
   { name: "Python", level: 80 },
   { name: "JS/Typescript/React", level: 80 },
-  { name: "HTML/CSS", level: 80 },
+  // { name: "HTML/CSS", level: 80 },
   { name: "Java", level: 70 },
   { name: "C/C++", level: 60 },
-  { name: "Dart", level: 50 },
+  { name: "Rust", level: 60 },
+  { name: "Go", level: 50},
+  { name: "SQL", level: 50 },
+  { name: "Dart", level: 60 },
 ];
 
 const SkillsSection = () => {
