@@ -16,7 +16,7 @@ const projects = [
     title: "Weenix OS",
     image: weenix,
     openimage: weenixProject,
-    category: "Operating Systems Design",
+    category: "Operating Systems Design, C",
     description:
       "Weenix is a Unix-based operating system kernel developed as a semester-long project in CS2670 at Brown University. It is divided into five sub-projects: Procs (handling threads, processes, and synchronization), Drivers (device drivers for various hardware), VFS (a virtual file system interface), S5FS (an implementation of the System V file system), and VM (virtual memory management and system call integration).",
     github: "https://github.com/chris100904/weenix",
@@ -26,7 +26,7 @@ const projects = [
     title: "Tomorrow@Brown",
     image: tomorrow,
     openimage: tomorrow,
-    category: "Web Development, NLPs, Data Handling/Processing",
+    category: "Web Development, NLPs, Data Handling/Processing, Python, Javascript, HTML/CSS, React, Tailwind",
     description:
       "Tomorrow@Brown is a search engine designed specifically for Brown University, enabling users to perform free-text queries to find relevant information such as events and courses related to the university. The project utilizes data extracted from Gmail via the Gmail API, processed using Python, Pandas, NLTK for data handling and TF-IDF and PageRank algorithms for document scoring. Contributed to the frontend development of the platform, ensuring a responsive and intuitive user interface with Tailwind, React, and CSS.",
     github: "https://github.com/chris100904/Tomorrow-Brown",
@@ -36,7 +36,7 @@ const projects = [
     title: "Personal Website",
     image: website,
     openimage: website,
-    category: "Web Development",
+    category: "Web Development, Javascript, HTML/CSS, React, Tailwind",
     description:
       "Created own personal website for showing resume. Worked with React components, Javascript, HTML/CSS + Tailwind, and various React frameworks (framer-motion, react-modal), for animations.",
     github: "https://github.com/chris100904/personalwebsite",
@@ -46,7 +46,7 @@ const projects = [
     title: "IP/TCP",
     image: tcpip,
     openimage: tcpip,
-    category: "Computer Networks",
+    category: "Computer Networks, Rust",
     description: "Designed a tech stack that implements the TCP/IP protocols as defined by RFC 791 and RF 793. This project was implemented using Rust and involved specific data structure design for each layer of the stack: the network layer, the transport layer, and the application layer. Major difficulties included thread synchronization across multiple threads within the network layer and ensuring the scalability of the data structure design for key features such as sliding window buffer, out of order packet handling, and retransmission queues. If you are an employer who would want to see this code, please contact me. I am unable to share this code as per Brown's academic policy.",
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     title: "TuneTailor AI (WIP)",
     image: spotify,
     openimage: spotify,
-    category: "Spotify API + AI Integration, Web Development",
+    category: "Spotify API + AI Integration, Web Development, Python, Javascript, HTML/CSS, React, Tailwind",
     description:
       "TuneTailor is a web app designed to help Spotify users create playlists based off of user-inputted criteria. The user is able to chat with an AI chatbot that queries for the user's song desires. The app then leverages Spotify's API to search for songs with the criteria from the queries and curates a downloadable playlist for the user.",
     github: "https://github.com/albertddong/TuneTailor",
@@ -64,7 +64,7 @@ const projects = [
     title: "Language Journal AI App (WIP)",
     image: languagejournal,
     openimage: languagejournal,
-    category: "LLMs/AI, Web Development",
+    category: "LLMs/AI, Web Development, Python, Javascript, HTML/CSS, React, Tailwind",
     description:
       "Language Journal AI is a web application and Chrome extension designed to support language learners through assisted diary entries. Given a user-inputted topic, the AI will output a list of related words in the user's target language, allowing them to more efficiently journal in their desired language. Users can publish their journal entries to other users on the app and view other people's entries.",
     github: "https://github.com/emluo555/language-journal",
