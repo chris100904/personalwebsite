@@ -59,16 +59,16 @@ const projects = [
       "TuneTailor is a web app designed to help Spotify users create playlists based off of user-inputted criteria. The user is able to chat with an AI chatbot that queries for the user's song desires. The app then leverages Spotify's API to search for songs with the criteria from the queries and curates a downloadable playlist for the user.",
     github: "https://github.com/albertddong/TuneTailor",
   },
-  {
-    id: 6,
-    title: "Language Journal AI App (WIP)",
-    image: languagejournal,
-    openimage: languagejournal,
-    category: "LLMs/AI, Web Development, Python, Javascript, HTML/CSS, React, Tailwind",
-    description:
-      "Language Journal AI is a web application and Chrome extension designed to support language learners through assisted diary entries. Given a user-inputted topic, the AI will output a list of related words in the user's target language, allowing them to more efficiently journal in their desired language. Users can publish their journal entries to other users on the app and view other people's entries.",
-    github: "https://github.com/emluo555/language-journal",
-  },
+  // {
+  //   id: 6,
+  //   title: "Language Journal AI App (WIP)",
+  //   image: languagejournal,
+  //   openimage: languagejournal,
+  //   category: "LLMs/AI, Web Development, Python, Javascript, HTML/CSS, React, Tailwind",
+  //   description:
+  //     "Language Journal AI is a web application and Chrome extension designed to support language learners through assisted diary entries. Given a user-inputted topic, the AI will output a list of related words in the user's target language, allowing them to more efficiently journal in their desired language. Users can publish their journal entries to other users on the app and view other people's entries.",
+  //   github: "https://github.com/emluo555/language-journal",
+  // },
 ];
 
 const ProjectsSection = ({ toggleModal }) => {
