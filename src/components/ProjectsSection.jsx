@@ -143,7 +143,7 @@ const ProjectsSection = ({ toggleModal }) => {
               <p className="px-8 pb-4 text-sm">{selectedProject.description}</p>
               <div className="flex items-center bg-black px-8 h-14 gap-4 rounded-b-lg">
                 {selectedProject.github !== null && selectedProject.github !== undefined && (
-                  <a href={selectedProject.github} className="project-modal-hover">
+                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="project-modal-hover">
                     DETAILS
                   </a>
                 )}
