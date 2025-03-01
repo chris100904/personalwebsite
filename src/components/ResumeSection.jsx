@@ -10,8 +10,14 @@ import x from "../assets/x.png";
 const experiences = [
   {
     title: "Software Engineering Intern",
+    company: "Hightainment",
+    duration: "January 2025 - Present",
+    description: "At Hightainment, I developed and deployed scalable APIs for core app features, including user favorites and watch provider management, designing database schemas and models to support functionality. I automated database updates using AWS Lambda, leveraging Python scripts to fetch data from TMDB APIs and FlixPatrol scraping, ensuring media records remained up to date. Additionally, I contributed to improving backend infrastructure, streamlining data synchronization processes, and enhancing overall platform efficiency."
+  }, 
+  {
+    title: "Software Engineering Intern",
     company: "Vane",
-    duration: "June 2024 - Present",
+    duration: "June 2024 - October 2024",
     description:
       "At Vane, the responsibilities spanned multiple disciplines in full-stack development since it was a very small team. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
   },
@@ -25,7 +31,7 @@ const experiences = [
   {
     title: "Software Developer",
     company: "Hack@Brown",
-    duration: "September 2024 - Present",
+    duration: "September 2024 - February 2025",
     description:
       "Working alongside a team of 8 developers to design Hack@Brown's website. This work involves design in HTML/CSS and Javascript/React, and we work closely with the UI/UX team to implement their designs. We also work on creating starter packs for hackathon attendees to help them get started with their projects, which range from topics such as cloud infrastructure, game development with Unity, to basic introductions to web development fremeworks.",
   },
