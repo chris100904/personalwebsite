@@ -47,18 +47,59 @@ const HomeSection = ({ toggleModal }) => {
 
   // Typing animation effect
   useEffect(() => {
-    const text = "Hi, I'm Christopher";
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= text.length) {
-        setTypedText(text.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
+    const phrases = [
+      "Hi, I'm Christopher.",
+      "你好，我叫陈宗毅.",
+      "안녕하세요, 저는 크리스입니다.",
+      "Hola, me llamo Cristóbal.",
+    ];
 
-    return () => clearInterval(timer);
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let isPausing = false;
+
+    const typeSpeed = 120;
+    const deleteSpeed = 60;
+    const pauseTime = 3000; // Pause for 2 seconds at the end of each phrase
+
+    const type = () => {
+      const currentPhrase = phrases[currentPhraseIndex];
+
+      if (isPausing) {
+        setTimeout(() => {
+          isPausing = false;
+          isDeleting = true;
+          type();
+        }, pauseTime);
+        return;
+      }
+
+      if (isDeleting) {
+        if (currentCharIndex > 0) {
+          setTypedText(currentPhrase.slice(0, currentCharIndex - 1));
+          currentCharIndex--;
+          setTimeout(type, deleteSpeed);
+        } else {
+          isDeleting = false;
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          setTimeout(type, 500); // Brief pause before typing next phrase
+        }
+      } else {
+        if (currentCharIndex < currentPhrase.length) {
+          setTypedText(currentPhrase.slice(0, currentCharIndex + 1));
+          currentCharIndex++;
+          setTimeout(type, typeSpeed);
+        } else {
+          isPausing = true;
+          type();
+        }
+      }
+    };
+
+    const timer = setTimeout(type, 1000); // Start after 1 second
+
+    return () => clearTimeout(timer);
   }, []);
 
   const openModal = () => {
@@ -134,20 +175,24 @@ const HomeSection = ({ toggleModal }) => {
                 >
                   {typedText}
                   <motion.span
-                    className="inline-block w-1 h-12 sm:h-16 lg:h-20 bg-blue-400 ml-2"
+                    className="inline-block w-1 bg-blue-400 ml-1 align-top"
+                    style={{
+                      height: "1em",
+                    }}
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity }}
                   />
                 </motion.h1>
                 <motion.p className="text-xl sm:text-2xl text-gray-300 font-light max-w-lg" variants={itemVariants}>
-                  Software Engineer & Computer Science Student passionate about building innovative solutions
+                  Applied Mathematics and Computer Science Student @ Brown University. Software Engineer with a passion
+                  for building innovative solutions.
                 </motion.p>
               </div>
 
               {/* Stats */}
               <motion.div className="grid grid-cols-3 gap-4 max-w-md" variants={itemVariants}>
                 <div className="text-left">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">5+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white">4+</div>
                   <div className="text-gray-400 text-sm">Projects</div>
                 </div>
                 <div className="text-left">
