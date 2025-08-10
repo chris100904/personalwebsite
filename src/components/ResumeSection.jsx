@@ -10,23 +10,31 @@ import x from "../assets/x.png";
 const experiences = [
   {
     title: "Software Engineering Intern",
+    company: "GitHub",
+    duration: "June 2025 - August 2025",
+    description:
+      "At GitHub, I worked on providing GitHub Copilot Chat support for the Projects Platform. This involved designing and implementing RESTful API endpoints in Ruby on Rails that enabled full CRUD operations for GitHub Projects and integrating them with GitHub's MCP server, supporting 1M+ active project repositories. I accelerated deployment velocity through the implementation of a comprehensive integration test suite that conformed to GitHub's CI/CD pipeline standards.",
+  },
+  {
+    title: "Software Engineering Intern",
     company: "Hightainment",
     duration: "January 2025 - Present",
-    description: "At Hightainment, I developed and deployed scalable APIs for core app features, including user favorites and watch provider management, designing database schemas and models to support functionality. I automated database updates using AWS Lambda, leveraging Python scripts to fetch data from TMDB APIs and FlixPatrol scraping, ensuring media records remained up to date. Additionally, I contributed to improving backend infrastructure, streamlining data synchronization processes, and enhancing overall platform efficiency."
-  }, 
+    description:
+      "At Hightainment, I developed and deployed scalable APIs for core app features, including user favorites and watch provider management, designing database schemas and models to support functionality. I automated database updates using AWS Lambda, leveraging Python scripts to fetch data from TMDB APIs and FlixPatrol scraping, ensuring media records remained up to date. Additionally, I contributed to improving backend infrastructure, streamlining data synchronization processes, and enhancing overall platform efficiency.",
+  },
   {
     title: "Software Engineering Intern",
     company: "Vane",
     duration: "June 2024 - October 2024",
     description:
-      "At Vane, the responsibilities spanned multiple disciplines in full-stack development since it was a very small team. Developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. Contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
+      "At Vane, the responsibilities spanned multiple disciplines in full-stack development since it was a very small team. I developed a reactive mobile app using Flutter and a database editor web app with React, TailwindCSS, Node.js, and Express.js, facilitating event advertisements and social party planning for businesses and communities. I contributed to the social party chat feature by utilizing WebSocket over TCP/IP and Kafka for real-time, secure, and reliable communication. Additionally, I implemented a web scraping system with Python, pandas, and Beautiful Soup to automate event data collection, integrated with MongoDB schemas for efficient data management, and managed MongoDB Atlas functions using the Pipeline Aggregation Framework.",
   },
   {
     title: "Undergraduate Research Assistant",
     company: "Brown University Interactive 3D Vision & Learning Lab (BRICS)",
     duration: "September 2024 - December 2024",
     description:
-      "Currently working on the development of a WebAssembly-based web interface to compile and manage the existing C++ code for IVL's motion capture camera system. This will help contribute to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture. Will collaborate with research associates to advance state-of-the-art 3D computer vision and deep learning algorithms, focusing on neural fields for modeling visual and physical quantities in scenes and objects.",
+      "Worked on the development of a WebAssembly-based web interface to compile and manage the existing C++ code for IVL's motion capture camera system. This helped contribute to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture.",
   },
   {
     title: "Software Developer",
@@ -188,125 +196,92 @@ const ResumeSection = ({ toggleModal }) => {
           <iframe src={resumePDF} title="Resume" width="100%" height="600px" className="border-0" />
         </Modal>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-16 max-w-6xl mx-auto">
+          {/* Work Experience Section */}
           <div>
-            <h3 className="flex justify-center text-2xl font-bold p-heebo tracking-widest mb-6 blue">
+            <h3 className="flex justify-center text-4xl font-bold p-heebo tracking-widest mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               WORK EXPERIENCE
             </h3>
-            <div className="flex flex-col">
+            <div className="grid grid-cols-1 gap-6">
               {experiences.map((exp, index) => (
-                <div key={index} className="flex">
-                  <div className="flex flex-row w-full">
-                    <div className="flex flex-col w-1/3 text-right pb-32">
-                      <h4
-                        className="text-base sm:text-xl font-bold p-heebo"
-                        style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
-                      >
-                        {exp.title}
-                      </h4>
-                      <p
-                        className="text-sm sm:text-base p-heebo"
-                        style={{
-                          color: "rgba(0, 0, 0, 0.72)",
-                          wordBreak: "break-word",
-                          overflowWrap: "break-word",
-                        }}
-                      >
-                        {exp.duration}
-                      </p>
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                >
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    {/* Left side - Header info */}
+                    <div className="flex-shrink-0 lg:w-1/3">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-800 rounded-full flex items-center justify-center flex-shrink-0">
+                          <img src={workIcon} alt="work icon" className="w-6 h-6 filter brightness-0 invert" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors">
+                            {exp.title}
+                          </h4>
+                          <h5 className="text-lg font-semibold text-blue-600 mb-2">{exp.company}</h5>
+                          <p className="text-sm text-gray-500 font-medium">{exp.duration}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="relative w-20 h-full">
-                      <img src={workIcon} alt="work icon" className="absolute left-1/2 transform -translate-x-1/2" />
-                      <div
-                        className="h-full absolute left-1/2 transform -translate-y-2 -translate-x-1/2"
-                        style={{
-                          width: "2px",
-                          backgroundColor: "#1e1e1e",
-                          opacity: "43%",
-                        }}
-                      ></div>
-                    </div>
-                    <div className="flex flex-col w-2/3 pb-10 pr-2 sm:pr-10 md:pr-10 lg:pr-44">
-                      <h5
-                        className="text-lg sm:text-xl pr-0 sm:pr-28 font-bold p-heebo tracking-wide"
-                        style={{ color: "#405BBA" }}
-                      >
-                        {exp.company}
-                      </h5>
-                      <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>
-                      <p
-                        className="text-base font-extralight p-heebo"
-                        style={{
-                          color: "rgba(0, 0, 0, 0.72)",
-                        }}
-                      >
-                        {exp.description}
-                      </p>
+
+                    {/* Vertical divider - hidden on mobile */}
+                    <div className="hidden lg:block w-px bg-gradient-to-b from-blue-200 to-purple-200"></div>
+
+                    {/* Right side - Description */}
+                    <div className="flex-1">
+                      <p className="text-gray-700 leading-relaxed text-sm">{exp.description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Education Section */}
           <div>
-            <h3 className="flex justify-center text-2xl font-bold p-heebo tracking-widest mb-6 blue">
-              BACKGROUND EDUCATION
+            <h3 className="flex justify-center text-4xl font-bold p-heebo tracking-widest mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              EDUCATION
             </h3>
-            <div className="flex flex-col">
+            <div className="grid grid-cols-1 gap-6">
               {education.map((edu, index) => (
-                <div key={index} className="flex">
-                  <div className="flex flex-row w-full">
-                    <div className="flex flex-col w-1/3 text-right pb-32">
-                      <h4
-                        className="text-base sm:text-xl font-bold p-heebo"
-                        style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
-                      >
-                        {edu.degree}
-                      </h4>
-                      <p
-                        className="text-sm sm:text-base p-heebo"
-                        style={{
-                          color: "rgba(0, 0, 0, 0.72)",
-                        }}
-                      >
-                        {edu.duration}
-                      </p>
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1"
+                >
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    {/* Left side - Header info */}
+                    <div className="flex-shrink-0 lg:w-1/3">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <img
+                            src={educationIcon}
+                            alt="education icon"
+                            className="w-6 h-6 filter brightness-0 invert"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors leading-tight">
+                            {edu.degree}
+                          </h4>
+                          <h5 className="text-base font-semibold text-blue-600 mb-2">{edu.school}</h5>
+                          <p className="text-sm text-gray-500 font-medium">{edu.duration}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="relative w-20 h-full">
-                      <img
-                        src={educationIcon}
-                        alt="education icon"
-                        className="absolute left-1/2 transform -translate-x-1/2"
-                      />
-                      <div
-                        className="h-full absolute left-1/2 transform -translate-y-2 -translate-x-1/2"
-                        style={{
-                          width: "2px",
-                          backgroundColor: "#1e1e1e",
-                          opacity: "43%",
-                        }}
-                      ></div>
-                    </div>
-                    <div className="flex flex-col w-2/3 pb-10 pr-2 sm:pr-10 md:pr-10 lg:pr-44">
-                      <h5 className="text-lg sm:text-xl font-bold p-heebo tracking-wide" style={{ color: "#405BBA" }}>
-                        {edu.school}
-                      </h5>
-                      <div className="mb-6 w-12" style={{ height: "2px", backgroundColor: "#1E1E1E" }}></div>
-                      <p
-                        className="text-base font-extralight p-heebo"
-                        style={{
-                          color: "rgba(0, 0, 0, 0.72)",
-                        }}
-                      >
-                        {edu.description}
-                      </p>
+
+                    {/* Vertical divider - hidden on mobile */}
+                    <div className="hidden lg:block w-px bg-gradient-to-b from-purple-200 to-blue-200"></div>
+
+                    {/* Right side - Description */}
+                    <div className="flex-1">
+                      <p className="text-gray-700 leading-relaxed text-sm">{edu.description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <NextPage href="#projects" isBrightBackground={true} />
         </div>
       </div>
     </section>
