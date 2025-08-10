@@ -18,7 +18,7 @@ const experiences = [
   {
     title: "Software Engineering Intern",
     company: "Hightainment",
-    duration: "January 2025 - Present",
+    duration: "January 2025 - April 2025",
     description:
       "At Hightainment, I developed and deployed scalable APIs for core app features, including user favorites and watch provider management, designing database schemas and models to support functionality. I automated database updates using AWS Lambda, leveraging Python scripts to fetch data from TMDB APIs and FlixPatrol scraping, ensuring media records remained up to date. Additionally, I contributed to improving backend infrastructure, streamlining data synchronization processes, and enhancing overall platform efficiency.",
   },
