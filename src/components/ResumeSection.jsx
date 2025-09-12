@@ -4,7 +4,6 @@ import workIcon from "../assets/work.png";
 import educationIcon from "../assets/education.png";
 import resumePDF from "../assets/resume.pdf";
 import preview from "../assets/preview.png";
-import NextPage from "./NextPage";
 import x from "../assets/x.png";
 
 const experiences = [
@@ -14,6 +13,13 @@ const experiences = [
     duration: "June 2025 - August 2025",
     description:
       "At GitHub, I worked on providing GitHub Copilot Chat support for the Projects Platform. This involved designing and implementing RESTful API endpoints in Ruby on Rails that enabled full CRUD operations for GitHub Projects and integrating them with GitHub's MCP server, supporting 1M+ active project repositories. I accelerated deployment velocity through the implementation of a comprehensive integration test suite that conformed to GitHub's CI/CD pipeline standards.",
+  },
+  {
+    title: "Software Developer",
+    company: "Hack@Brown",
+    duration: "September 2024 - Present",
+    description:
+      "For the 2026 Hack@Brown rendition, I am a lead for the dev team. In the previous year, I worked alongside a team of 8 developers to design Hack@Brown's website. This work involves design in HTML/CSS and Javascript/React, and we work closely with the UI/UX team to implement their designs. We also work on creating starter packs for hackathon attendees to help them get started with their projects, which range from topics such as cloud infrastructure, game development with Unity, to basic introductions to web development frameworks.",
   },
   {
     title: "Software Engineering Intern",
@@ -35,13 +41,6 @@ const experiences = [
     duration: "September 2024 - December 2024",
     description:
       "Worked on the development of a WebAssembly-based web interface to compile and manage the existing C++ code for IVL's motion capture camera system. This helped contribute to the expansion of the BRICS system from 50 to 300+ cameras for advanced human-robot interaction capture.",
-  },
-  {
-    title: "Software Developer",
-    company: "Hack@Brown",
-    duration: "September 2024 - February 2025",
-    description:
-      "Working alongside a team of 8 developers to design Hack@Brown's website. This work involves design in HTML/CSS and Javascript/React, and we work closely with the UI/UX team to implement their designs. We also work on creating starter packs for hackathon attendees to help them get started with their projects, which range from topics such as cloud infrastructure, game development with Unity, to basic introductions to web development fremeworks.",
   },
   {
     title: "Data Analyst and Marketing Intern",

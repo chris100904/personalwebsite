@@ -5,10 +5,7 @@ import tomorrow from "../assets/tomorrow@brown.png";
 import weenixProject from "../assets/weenixProject.jpg";
 import website from "../assets/website.png";
 import tcpip from "../assets/TCP-IP.webp";
-import running from "../assets/running.jpeg";
-import spotify from "../assets/spotify.png";
-import languagejournal from "../assets/languagejournal.jpeg";
-import NextPage from "./NextPage";
+import fliptastic from "../assets/fliptastic.png";
 
 const projects = [
   {
@@ -38,11 +35,21 @@ const projects = [
     openimage: tcpip,
     category: "Computer Networks, Rust",
     description:
-      "Designed a tech stack that implements the TCP/IP protocols as defined by RFC 791 and RF 793. This project was implemented using Rust and involved specific data structure design for each layer of the stack: the network layer, the transport layer, and the application layer. Major difficulties included thread synchronization across multiple threads within the network layer and ensuring the scalability of the data structure design for key features such as sliding window buffer, out of order packet handling, and retransmission queues. If you are an employer who would want to see this code, please contact me. I am unable to share this code as per Brown's academic policy.",
+      "Designed a tech stack that implements the TCP/IP protocols as defined by RFC 791 and RFC 793. This project was implemented using Rust and involved specific data structure design for each layer of the stack: the network layer, the transport layer, and the application layer. Major difficulties included thread synchronization across multiple threads within the network layer and ensuring the scalability of the data structure design for key features such as sliding window buffer, out of order packet handling, and retransmission queues. If you are an employer who would want to see this code, please contact me. I am unable to share this code as per Brown's academic policy.",
     github: "https://github.com/chris100904/ip-tcp",
   },
   {
     id: 4,
+    title: "Fliptastic",
+    image: fliptastic,
+    openimage: fliptastic,
+    category: "Computer Vision, Human-Computer Interaction, Python, React, FastAPI",
+    description:
+      "Fliptastic is a vision-based, hands-free page turning system for musicians that uses a standard laptop webcam to recognize three natural facial cues: blink, head tilt, and gaze. Built with a MediaPipe Face Mesh backbone and mode-specific detection logic, the system enables flexible page flipping without auxiliary hardware. The backend was implemented with FastAPI and WebSockets, while the React frontend leverages PDF.js for score viewing. User trials with live piano performance demonstrated the system’s effectiveness, highlighting trade-offs between accuracy and comfort across different modes.",
+    github: "https://github.com/chris100904/fliptastic",
+  },
+  {
+    id: 5,
     title: "Personal Website",
     image: website,
     openimage: website,
